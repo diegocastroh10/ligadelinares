@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
+
 //ROUTES
 import { AppRoutingModule } from './app-routing.module';
 
@@ -25,7 +27,8 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule //permite realizar peticiones put, get, delete, entre otras para app rest
   ],
   providers: [],
   bootstrap: [AppComponent]
