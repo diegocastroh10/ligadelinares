@@ -2,31 +2,37 @@
     <div class="ae-grid ae-grid--collapse">
       <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-left">
         <ul class="rk-menu rk-footer-menu">
-          <li class="rk-menu__item"><a href="about.html" class="rk-menu__link">About</a>
+          <li class="rk-menu__item"><a href="about.html" class="rk-menu__link">Web usuario</a>
           </li>
-          <li class="rk-menu__item"><a href="documentation.html" class="rk-menu__link">Docs</a>
+          <li class="rk-menu__item"><a href="documentation.html" class="rk-menu__link">Gmail</a>
           </li>
-          <li class="rk-menu__item"><a href="contact.html" class="rk-menu__link">Contact</a>
+          <li class="rk-menu__item"><a href="contact.html" class="rk-menu__link">Asd</a>
           </li>
         </ul>
         <p class="rk-footer__text rk-footer__copy "> <span class="ae-u-bold">© </span><span class="ae-u-bolder">LIGA DE LINARES {{ ano_actual }} </span>All Right Reserved.</p>
       </div>
-      <div class="ae-grid__item item-lg-4 au-xs-ta-center"><a href="#0" class="rk-social-btn ">
+      <div class="ae-grid__item item-lg-4 au-xs-ta-center">
+        
+          <a [href]="InfoPaginaService.info.facebook" class="rk-social-btn ">
           <svg>
             <use xlink:href="assets/img/symbols.svg#icon-facebook"></use>
-          </svg></a><a href="#0" class="rk-social-btn ">
+          </svg></a>
+          
+          <a routerLink="" class="rk-social-btn ">
           <svg>
             <use xlink:href="assets/img/symbols.svg#icon-twitter"></use>
-          </svg></a><a href="#0" class="rk-social-btn ">
+          </svg></a>
+          
+          <a [href]="InfoPaginaService.info.instagram" class="rk-social-btn ">
           <svg>
             <use xlink:href="assets/img/symbols.svg#icon-pinterest"></use>
-          </svg></a><a href="#0" class="rk-social-btn ">
-          <svg>
-            <use xlink:href="assets/img/symbols.svg#icon-tumblr"></use>
-          </svg></a></div>
+          </svg></a>
+          
+        </div>
       <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right">
-        <p class="rk-footer__text rk-footer__contact "> <span class="ae-u-bold">Email: </span><span class="ae-u-bolder"> <a href="#0" class="rk-dark-color ">contact@urkuportfolio.com </a></span></p>
-        <p class="rk-footer__text rk-footer__by">Theme by <a href="http://pixeden.com" class="ae-u-bolder">Pixeden.</a></p>
+        <p class="rk-footer__text rk-footer__contact "> <span class="ae-u-bold">Email: </span>
+          <span class="ae-u-bolder"> <a href="mailTo:{{ InfoPaginaService.info.email }}" class="rk-dark-color "> {{ InfoPaginaService.info.email }} </a></span></p>
+        <p class="rk-footer__text rk-footer__by">Page by <a href="http://pixeden.com" class="ae-u-bolder">d1eg0</a></p>
       </div>
     </div>
 </footer>
