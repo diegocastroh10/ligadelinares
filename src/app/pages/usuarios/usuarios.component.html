@@ -1,1 +1,15 @@
-<p>usuarios works!</p>
+<div class="ae-container-fluid ae-container-fluid--inner rk-main">
+    <div class="ae-grid au-xs-ta-center au-mb-4">
+
+    <div *ngFor="let usuario of infoUsuariosService.usuarios" class="ae-grid__item item-lg-4 ae-kappa au-mb-3">
+        <img src="{{ usuario.url_imgUsuario }}" alt="" class="au-mb-3">
+        <h5 class="ae-u-bolder au-mt-2">{{ usuario.nombreUsuario }}</h5>
+        <p class="ae-u-bolder au-mb-3">{{ usuario.idEquipo }}</p>
+        <a target="_blank" href="https://www.instagram.com/{{ usuario.instagramUsuario }}" class="ae-u-bolder au-underline">@{{ usuario.instagramUsuario }}</a>
+    </div>
+    </div>
+</div>
+
+<script src="assets/js/svg4everybody.min.js"></script>
+<script>svg4everybody();</script>
+
