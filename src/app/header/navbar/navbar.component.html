@@ -32,6 +32,9 @@
           </li>
           <li class="rk-menu__item"><a routerLink="contact.html" class="rk-menu__link">Contacto</a>
           </li>
+          <li class="rk-menu__item" routerLinkActive="active">
+            <button type="click" (click)='signOut()' class="btn btn-primary btn-lg"></button>
+          </li>
         </ul>
         <form class="rk-search">
           <input type="text" placeholder="Search" id="urku-search" class="rk-search-field">

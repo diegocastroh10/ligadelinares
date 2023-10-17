@@ -1,15 +1,60 @@
-import { Injectable, NgZone } from '@angular/core';
-import { GoogleAuthProvider } from '@angular/fire/auth';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Router } from '@angular/router';
+import { Injectable, NgZone, OnInit, inject } from '@angular/core';
+import { Auth, signInWithEmailAndPassword, getAuth, signOut, authState } from '@angular/fire/auth';
+//import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router, RouterLink } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthUsuarioService {
 
-  usuario: any;
+  usuario: any; //userData
+  auth: Auth = getAuth();
 
+  private router = inject(Router);
+
+  user$: Observable<any> = authState(this.auth);
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    
+  }
+
+  logInWithEmailAndPassword (correoUsuario: string, contrasenaUsuario: string) {
+    signInWithEmailAndPassword(this.auth, correoUsuario, contrasenaUsuario)
+    .then( () => {
+      localStorage.setItem('token', 'true');
+      this.router.navigate(['inicio-admin']);
+      console.log('Se ha iniciado sesión.')
+      //this.usuario = userCredential.user
+      //this.estadoUsuario()
+    })
+    .catch( (error: Error) => { 
+      alert(error.message);
+      this.router.navigate(['login-admin']);
+    });
+  };
+
+  get isLoggedIn(): boolean {
+    const usuario = JSON.parse(localStorage.getItem('user')!);
+    return usuario !== null;
+  };
+
+  logOut() { 
+    signOut(this.auth);
+    localStorage.removeItem('token');
+    this.router.navigate(['login-admin']);
+    console.log('Su sesión ha sido cerrada.')
+  };
+
+  // Función para borrar el token
+  borrarToken() {
+    localStorage.removeItem('user');
+  };
+};
+/*
   constructor(
     private firebaseAuthenticationService: AngularFireAuth,
     private router: Router,
@@ -29,21 +74,16 @@ export class AuthUsuarioService {
   estadoUsuario() {
     this.firebaseAuthenticationService.authState
     .subscribe( (userState) => {
-      userState && this.ngZone.run( () => this.router.navigate(['inicio-admin']));
+      if (userState) {
+        this.ngZone.run( () => this.router.navigate(['inicio-admin']));
+      } else {
+        this.router.navigate(['login-admin']);
+      };
     });
   };
+*/
 
-  logInWithEmailAndPassword (cuentaUsuario: string, contrasenaUsuario: string) {
-    return this.firebaseAuthenticationService.signInWithEmailAndPassword(cuentaUsuario, contrasenaUsuario)
-    .then( (userCredential) => {
-      this.usuario = userCredential.user
-      this.estadoUsuario()
-    })
-    .catch( (error: Error) => { 
-      alert(error.message);
-    });
-  };
-
+/*
   logInWithPopup() {
     return this.firebaseAuthenticationService.signInWithPopup(new GoogleAuthProvider())
       .then( () => this.estadoUsuario() )
@@ -51,19 +91,19 @@ export class AuthUsuarioService {
         alert(error.message);
       });
   };
+*/
 
-  get isLoggedIn(): boolean {
-    const usuario = JSON.parse(localStorage.getItem('user')!);
-    return usuario !== null;
-  };
+/*
+  signUpWithEmailAndPassword(correoUsuario: string, contrasenaUsuario: string) {
+    return this.firebaseAuthenticationService.createUserWithEmailAndPassword(correoUsuario, contrasenaUsuario)
+      .then((userCredential) => {
+        this.usuario = userCredential.user
+        this.estadoUsuario()
+      })
+      .catch((error) => {
+        alert(error.message);
+      })
+  }
+*/
 
-  logOut() {
-    return this.firebaseAuthenticationService.signOut()
-      .then( () => {
-        localStorage.removeItem('user');
-        this.router.navigate(['login-admin']);
-      });
-  };
 
-
-};

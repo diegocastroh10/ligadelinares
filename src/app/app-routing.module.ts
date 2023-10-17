@@ -5,12 +5,13 @@ import { EquiposComponent } from './pages/equipos/equipos.component';
 import { NoticiasComponent } from './pages/noticias/noticias.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { LoginAdminComponent } from './pages/login-admin/login-admin.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: InicioAdminComponent},
-  { path: 'equipos', component: EquiposComponent},
+  { path: 'equipos', component: EquiposComponent, canActivate: [AuthGuard]},
   { path: 'noticias', component: NoticiasComponent},
-  { path: 'usuarios', component: UsuariosComponent },
+  { path: 'usuarios', component: UsuariosComponent},
   { path: 'login-admin', component: LoginAdminComponent},
   //path que redirecciona a la dirección indicada si el link está mal escrito
   { path: '**', pathMatch: 'full', redirectTo: ''}
