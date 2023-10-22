@@ -2,13 +2,16 @@ import { Injectable, NgZone, OnInit, inject } from '@angular/core';
 import { Auth, signInWithEmailAndPassword, getAuth, signOut, authState } from '@angular/fire/auth';
 import { Router, RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
+import { AuthUsuarios } from '../interfaces/auth-usuarios.interface';
+import { addDoc, collection } from '@angular/fire/firestore';
+import { getFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthUsuarioService {
 
-  usuario: any; //userData
+  //usuario: any; //userData
   auth: Auth = getAuth();
 
   private router = inject(Router);
@@ -35,11 +38,12 @@ export class AuthUsuarioService {
       this.router.navigate(['login-admin']);
     });
   };
-
+/*
   get isLoggedIn(): boolean {
     const usuario = JSON.parse(localStorage.getItem('user')!);
     return usuario !== null;
   };
+*/
 
   logOut() { 
     signOut(this.auth);
@@ -47,11 +51,14 @@ export class AuthUsuarioService {
     this.router.navigate(['login-admin']);
     alert('Su sesión ha sido cerrada.')
   };
-
+  
+/*
   // Función para borrar el token
   borrarToken() {
     localStorage.removeItem('user');
   };
+*/
+
 };
 /*
   constructor(
