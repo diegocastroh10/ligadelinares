@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { AuthUsuarioService } from '../../services/auth-usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-admin',
@@ -7,11 +8,13 @@ import { AuthUsuarioService } from '../../services/auth-usuario.service';
   styleUrls: ['./login-admin.component.scss']
 })
 export class LoginAdminComponent {
-  /*
-  constructor( private authService: AuthUsuarioService) {
+  
+  constructor( 
+    private authService: AuthUsuarioService,
+    private router: Router) {
 
   }
-
+  /*
   signIn(correoUsuario: string, contrasenaUsuario: string) {
     this.authService.logInWithEmailAndPassword(correoUsuario, contrasenaUsuario);
   };
@@ -22,11 +25,13 @@ export class LoginAdminComponent {
   */
 
   correoUsuario!: string;
-  contrasenaUsuario!: string;
-
-  authService = inject(AuthUsuarioService);
+  contrasenaUsuario!: string;  
 
   signIn() {
     this.authService.logInWithEmailAndPassword(this.correoUsuario, this.contrasenaUsuario);
   };
+
+  registrarUsuario() {
+    this.router.navigate(['signup-usuario']);
+  }
 };

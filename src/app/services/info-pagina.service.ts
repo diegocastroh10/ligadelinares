@@ -14,7 +14,7 @@ export class InfoPaginaService {
 
   constructor( private http: HttpClient ) {
     this.cargarInfoPagina();
-    this.cargarUsuarios();
+    //this.cargarUsuarios();
   };
 
   //FUNCIONES PARA CARGAR DATOS DE FIREBASE
@@ -30,7 +30,7 @@ export class InfoPaginaService {
       console.log(resp.titulo);  
     });
   };
-
+/*
   private cargarUsuarios() {
     console.log('CARANDO USUARIOS LBDL');
     this.http.get('https://ligadelinares-default-rtdb.firebaseio.com/usuarios.json')
@@ -40,4 +40,5 @@ export class InfoPaginaService {
       console.log( resp.idUsuario );
     });
   };
+*/
 };

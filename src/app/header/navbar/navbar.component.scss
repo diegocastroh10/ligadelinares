@@ -1,0 +1,14 @@
+.rk-menu__button {
+    display: flex; /* Para centrar verticalmente el contenido */
+    align-items: flex-start; /* Centra verticalmente el contenido */
+    background-color: white; /* Fondo blanco */
+    padding: 1px; /* Ajusta el espaciado alrededor del botón según sea necesario */
+    border-radius: 1px; /* Agrega esquinas redondeadas si es necesario */
+  }
+  
+  .rk-menu__button button {
+    background: none; /* Elimina el fondo del botón */
+    border: none; /* Elimina el borde del botón si es necesario */
+    cursor: pointer;
+  }
+  

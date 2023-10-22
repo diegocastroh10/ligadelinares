@@ -1,6 +1,5 @@
 import { Injectable, NgZone, OnInit, inject } from '@angular/core';
 import { Auth, signInWithEmailAndPassword, getAuth, signOut, authState } from '@angular/fire/auth';
-//import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router, RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -26,27 +25,27 @@ export class AuthUsuarioService {
     signInWithEmailAndPassword(this.auth, correoUsuario, contrasenaUsuario)
     .then( () => {
       localStorage.setItem('token', 'true');
+      alert('Se ha iniciado sesión.')
       this.router.navigate(['inicio-admin']);
-      console.log('Se ha iniciado sesión.')
       //this.usuario = userCredential.user
       //this.estadoUsuario()
     })
-    .catch( (error: Error) => { 
-      alert(error.message);
+    .catch( () => { 
+      alert('Verifica tus datos y vuelve a iniciar sesión.');
       this.router.navigate(['login-admin']);
     });
   };
-/*
+
   get isLoggedIn(): boolean {
     const usuario = JSON.parse(localStorage.getItem('user')!);
     return usuario !== null;
   };
-*/
+
   logOut() { 
     signOut(this.auth);
     localStorage.removeItem('token');
     this.router.navigate(['login-admin']);
-    console.log('Su sesión ha sido cerrada.')
+    alert('Su sesión ha sido cerrada.')
   };
 
   // Función para borrar el token
