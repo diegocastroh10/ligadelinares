@@ -36,12 +36,12 @@ export class AuthUsuarioService {
       this.router.navigate(['login-admin']);
     });
   };
-
+/*
   get isLoggedIn(): boolean {
     const usuario = JSON.parse(localStorage.getItem('user')!);
     return usuario !== null;
   };
-
+*/
   logOut() { 
     signOut(this.auth);
     localStorage.removeItem('token');
