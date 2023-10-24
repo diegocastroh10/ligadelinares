@@ -1,0 +1,7 @@
+@mixin add-card-margin() {
+    margin: 2px;
+  }
+  
+  .card-group .card {
+    @include add-card-margin();
+  }
