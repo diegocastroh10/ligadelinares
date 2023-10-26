@@ -1,3 +1,4 @@
+
 import { Component, inject } from '@angular/core';
 import { AuthUsuarioService } from '../../services/auth-usuario.service';
 import { Router } from '@angular/router';
@@ -27,8 +28,8 @@ export class LoginAdminComponent {
   correoUsuario!: string;
   contrasenaUsuario!: string;  
 
-  signIn() {
-    this.authService.logInWithEmailAndPassword(this.correoUsuario, this.contrasenaUsuario);
+  signUpCmpnt() {
+    this.authService.signUp(this.correoUsuario, this.contrasenaUsuario);
   };
 
   registrarUsuario() {

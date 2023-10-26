@@ -1,3 +1,4 @@
+/*
 import { CanActivateFn, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Injectable, inject } from '@angular/core';
 import { Observable, take, map, tap } from 'rxjs';
@@ -28,3 +29,4 @@ export class AuthGuard {
       )
   };
 };
+*/

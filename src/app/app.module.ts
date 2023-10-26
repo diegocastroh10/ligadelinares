@@ -21,15 +21,21 @@ import { FormsModule } from '@angular/forms';
 
 //FIREBASE
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../environments/environment';
 
 //FONTAWESOME 6
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SigninUsuarioComponent } from './pages/signin-usuario/signin-usuario.component';
+import { VerifyUsuarioComponent } from './pages/verify-usuario/verify-usuario.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +47,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NoticiasComponent,
     UsuariosComponent,
     LoginAdminComponent,
-    SignupUsuarioComponent
+    SignupUsuarioComponent,
+    SigninUsuarioComponent,
+    VerifyUsuarioComponent
   ],
   imports: [
     BrowserModule,
@@ -49,12 +57,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HttpClientModule,
     FontAwesomeModule,
     FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()), //permite realizar peticiones put, get, delete, entre otras para app rest
-    AngularFireModule.initializeApp(environment.firebase), FontAwesomeModule
+    //AngularFireModule.initializeApp(environment.firebase), FontAwesomeModule
   ],
   providers: [
     ScreenTrackingService,UserTrackingService

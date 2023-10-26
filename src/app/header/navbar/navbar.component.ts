@@ -11,7 +11,7 @@ export class NavbarComponent {
 
   isLoggedIn: boolean | undefined;
 
-  constructor( private authService: AuthUsuarioService) {
+  /*constructor( private authService: AuthUsuarioService) {
     this.authService.user$.subscribe( user => {
       this.isLoggedIn = !!user;
     });
@@ -19,5 +19,5 @@ export class NavbarComponent {
 
   signOut() {
     this.authService.logOut();
-  };
+  }; */
 }
