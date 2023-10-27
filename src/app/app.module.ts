@@ -36,6 +36,7 @@ import { environment } from '../environments/environment';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SigninUsuarioComponent } from './pages/signin-usuario/signin-usuario.component';
 import { VerifyUsuarioComponent } from './pages/verify-usuario/verify-usuario.component';
+import { RestaurarContrasenaComponent } from './pages/restaurar-contrasena/restaurar-contrasena.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { VerifyUsuarioComponent } from './pages/verify-usuario/verify-usuario.co
     LoginAdminComponent,
     SignupUsuarioComponent,
     SigninUsuarioComponent,
-    VerifyUsuarioComponent
+    VerifyUsuarioComponent,
+    RestaurarContrasenaComponent
   ],
   imports: [
     BrowserModule,
