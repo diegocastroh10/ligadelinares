@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthUsuarioService } from '../../services/auth-usuario.service';
-import { user } from '@angular/fire/auth';
+import { AuthGuard } from 'src/app/guards/auth.guard';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,10 +9,25 @@ import { user } from '@angular/fire/auth';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  canActivate: boolean | undefined;
 
-  isLoggedIn: boolean | undefined;
 
-  /*constructor( private authService: AuthUsuarioService) {
+    constructor(
+      public authService: AuthUsuarioService,
+      public authGuard: AuthGuard,
+      public router: Router,
+    ) {
+
+    }
+
+    viewProfile() {
+      this.router.navigate(['perfil-usuario']);
+    };
+
+
+  /*
+
+  constructor( private authService: AuthUsuarioService) {
     this.authService.user$.subscribe( user => {
       this.isLoggedIn = !!user;
     });

@@ -1,48 +1,50 @@
-<div class="displayTable">
-    <div class="displayTableCell">
-      <div class="authBlock">
-        <h3>Iniciar sesión</h3>
-        <div class="formGroup">
-          <input
-            type="text"
-            class="formControl"
-            placeholder="Username"
-            #correoUsuario
-            required
-          />
-        </div>
-        <div class="formGroup">
-          <input
-            type="password"
-            class="formControl"
-            placeholder="Password"
-            #contrasenaUsuario
-            required
-          />
-        </div>
-        <!-- Calling SignIn Api from AuthService -->
-        <div class="formGroup">
-          <input
-            type="button"
-            class="btn btnPrimary"
-            value="Ingresar"
-            (click)="authService.signIn(correoUsuario.value, contrasenaUsuario.value)"
-          /> 
-        </div>
-
-        <div class="forgotPassword">
-          <span routerLink="/restaurar-contrasena">Recuperar contraseña</span>
-        </div>
+<div class="displayTable d-flex justify-content-center align-items-center min-vh-100">
+  <div class="displayTableCell">
+    <div class="authBlock">
+      <h3>Sign In</h3>
+      <div class="formGroup">
+        <input
+          type="text"
+          class="formControl"
+          placeholder="Username"
+          #userName
+          required
+        />
       </div>
-      <div class="redirectToLogin">
-        <span
-          >Don't have an account?<span
-            class="redirect"
-            routerLink="/signup-usuario"
-          >
-            Sign Up</span
-          ></span
-        >
+      <div class="formGroup">
+        <input
+          type="password"
+          class="formControl"
+          placeholder="Password"
+          #userPassword
+          required
+        />
+      </div>
+      <!-- Calling SignIn Api from AuthService -->
+      <div class="formGroup">
+        <input
+          type="button"
+          class="btn btnPrimary"
+          value="Log in"
+          (click)="authService.signIn(userName.value, userPassword.value)"
+        />
+      </div>
+      <div class="formGroup">
+        <span class="or"><span class="orInner">Or</span></span>
+      </div>
+      <div class="forgotPassword">
+        <span routerLink="/restaurar-contrasena">Forgot Password?</span>
       </div>
     </div>
+    <div class="redirectToLogin">
+      <span
+        >Don't have an account?<span
+          class="redirect"
+          routerLink="/signup-usuario"
+        >
+          Sign Up</span
+        ></span
+      >
+    </div>
   </div>
+</div>

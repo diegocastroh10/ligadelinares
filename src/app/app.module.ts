@@ -37,6 +37,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SigninUsuarioComponent } from './pages/signin-usuario/signin-usuario.component';
 import { VerifyUsuarioComponent } from './pages/verify-usuario/verify-usuario.component';
 import { RestaurarContrasenaComponent } from './pages/restaurar-contrasena/restaurar-contrasena.component';
+import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { RestaurarContrasenaComponent } from './pages/restaurar-contrasena/resta
     SignupUsuarioComponent,
     SigninUsuarioComponent,
     VerifyUsuarioComponent,
-    RestaurarContrasenaComponent
+    RestaurarContrasenaComponent,
+    PerfilUsuarioComponent
   ],
   imports: [
     BrowserModule,

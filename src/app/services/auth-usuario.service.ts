@@ -7,17 +7,15 @@ import {
 import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { Auth, getAuth, authState } from '@angular/fire/auth';
+import { getDoc, doc } from 'firebase/firestore';
+import { docData } from '@angular/fire/firestore';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthUsuarioService {
   userData: any;
-
-  //auth: Auth = getAuth();
-  //user$: Observable<any> = authState(this.auth);
 
   constructor(
     public afs: AngularFirestore,
@@ -26,28 +24,33 @@ export class AuthUsuarioService {
     public ngZone: NgZone
   ) {
     /* Guardar los datos del usuario en el LocalStorge cuando 
-    Inicia sesión y dejarlo como null cuando se cierra la sesión */
+    Inicia sesión y dejarlo como null cuando se cierra la sesión 
     this.afAuth.authState.subscribe( (user) => {
       if (user) {
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));
+        console.log(this.userData);
         JSON.parse(localStorage.getItem('user')!);
       } else {
         localStorage.setItem('user', 'null');
         JSON.parse(localStorage.getItem('user')!);
       };
     });
+    */
 
   };
 
+  //INICIAR SESIÓN
   signIn(correoUsuario:string, contrasenaUsuario:string) {
     return this.afAuth
       .signInWithEmailAndPassword(correoUsuario,contrasenaUsuario)
       .then( (result) => {
-        this.setUserData(result.user);
+        //this.setUserData(result.user);
+        console.log('resultado:', result);
         this.afAuth.authState.subscribe( (user) => {
           if (user) {
-            console.log('Se ha iniciado sesión.')
+            this.getUserData(user);
+            console.log('Se ha iniciado sesión.', user);
             this.router.navigate(['inicio-admin']);
           };
         });
@@ -57,7 +60,7 @@ export class AuthUsuarioService {
       });
   };
 
-  //INICIAR SESIÓN CON CORREO Y CONTRASEÑA
+  //CREAR USUARIO
   signUp(correoUsuario:string, contrasenaUsuario:string) {
     return this.afAuth
       .createUserWithEmailAndPassword(correoUsuario, contrasenaUsuario)
@@ -79,7 +82,7 @@ export class AuthUsuarioService {
       });
   };
 
-  //REINICIAR CONTRASEÑA
+  //RESTAURAR CONTRASEÑA
   forgotPassword(contrasenaNueva: string) {
     return this.afAuth
       .sendPasswordResetEmail(contrasenaNueva)
@@ -91,11 +94,18 @@ export class AuthUsuarioService {
       });
   };
 
-  get isVerify(): boolean {
+  //AUTH GUARD
+  get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user')!);
     return user !== null && user.emailVerified !== false ? true : false;
   }
 
+  get isAdmindIn(): boolean {
+    const user = JSON.parse(localStorage.getItem('user')!);
+    return user !== null && user.emailVerified !== false && user.tipoUsuario == '1' ? true : false;
+  }
+
+  //
   setUserData(user: any) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `usuarios/${user.uid}`
@@ -106,18 +116,52 @@ export class AuthUsuarioService {
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
-    }
-
+      tipoUsuario: '0',
+    };
+    console.log(user);
+    
     return userRef.set(userData, {
       merge: true,
     });
+    
+  };
+
+  async getUserData(user: any) {
+    /*const userRef: AngularFirestoreDocument<any> = this.afs.doc(
+      `usuarios/${user.uid}`
+    );*/
+    const userRef = this.afs.doc(`usuarios/${user.uid}`).valueChanges().subscribe((result:any) => {
+      console.log(result);
+
+      const userData: AuthUsuarios = { 
+        uid: user.uid,
+        email: user.email,
+        displayName: user.displayName,
+        photoURL: user.photoURL,
+        emailVerified: user.emailVerified,
+        tipoUsuario: result.tipoUsuario,
+      };
+
+      localStorage.setItem('user', JSON.stringify(userData));
+
+    });
+
+    
+    console.log(user);
+    /*
+    return userRef.set(userData, {
+      merge: true,
+    });
+    */
   };
 
   //CERRAR SESIÓN Y BORRAR TOKEN
   signOut() {
     return this.afAuth.signOut().then( () => {
+      console.log('Se ha cerrado su sesión.')
       localStorage.removeItem('user');
-      this.router.navigate(['login-usuario']);
+      localStorage.setItem('user', 'null');
+      this.router.navigate(['signin-usuario']);
     });
   };
 

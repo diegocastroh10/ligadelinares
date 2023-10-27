@@ -11,9 +11,10 @@ import { SignupUsuarioComponent } from './pages/signup-usuario/signup-usuario.co
 import { SigninUsuarioComponent } from './pages/signin-usuario/signin-usuario.component';
 import { VerifyUsuarioComponent } from './pages/verify-usuario/verify-usuario.component';
 import { RestaurarContrasenaComponent } from './pages/restaurar-contrasena/restaurar-contrasena.component';
+import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
 
 //GUARDS
-//import { AuthGuard } from './guards/auth.guard';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: InicioAdminComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'signin-usuario', component: SigninUsuarioComponent},
   { path: 'verify-usuario', component: VerifyUsuarioComponent},
   { path: 'restaurar-contrasena', component: RestaurarContrasenaComponent },
+  { path: 'perfil-usuario', component: PerfilUsuarioComponent, canActivate: [AuthGuard]},
   //path que redirecciona a la dirección indicada si el link está mal escrito
   { path: '**', pathMatch: 'full', redirectTo: ''}
 ];
