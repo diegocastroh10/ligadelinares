@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AuthUsuarioService } from 'src/app/services/auth-usuario.service';
 
 @Component({
@@ -7,6 +8,11 @@ import { AuthUsuarioService } from 'src/app/services/auth-usuario.service';
   styleUrls: ['./perfil-usuario.component.scss']
 })
 export class PerfilUsuarioComponent {
-  constructor(public authService: AuthUsuarioService) {}
-  ngOnInit(): void {}
-}
+  constructor(
+    public authService: AuthUsuarioService,
+  ) {
+
+  };
+
+
+};

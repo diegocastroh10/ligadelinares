@@ -7,6 +7,7 @@ import {
 import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { getDoc, doc } from 'firebase/firestore';
 import { docData } from '@angular/fire/firestore';
 
@@ -41,7 +42,7 @@ export class AuthUsuarioService {
   };
 
   //INICIAR SESIÓN
-  signIn(correoUsuario:string, contrasenaUsuario:string) {
+  async signIn(correoUsuario:string, contrasenaUsuario:string) {
     return this.afAuth
       .signInWithEmailAndPassword(correoUsuario,contrasenaUsuario)
       .then( (result) => {
@@ -61,7 +62,7 @@ export class AuthUsuarioService {
   };
 
   //CREAR USUARIO
-  signUp(correoUsuario:string, contrasenaUsuario:string) {
+  async signUp(correoUsuario:string, contrasenaUsuario:string) {
     return this.afAuth
       .createUserWithEmailAndPassword(correoUsuario, contrasenaUsuario)
       .then( (result) => {
@@ -106,7 +107,7 @@ export class AuthUsuarioService {
   }
 
   //
-  setUserData(user: any) {
+  async setUserData(user: any) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `usuarios/${user.uid}`
     );
@@ -123,6 +124,9 @@ export class AuthUsuarioService {
     return userRef.set(userData, {
       merge: true,
     });
+    /*
+    Utilizas userRef.set(userData, { merge: true }) para almacenar los datos en el documento de Firebase Firestore. El parámetro { merge: true } se utiliza para fusionar los datos con un documento existente si ya existe uno con la misma ruta, de lo contrario, se crea un nuevo documento. Esto permite actualizar los campos existentes y agregar nuevos campos según sea necesario.
+    */
     
   };
 
@@ -143,16 +147,12 @@ export class AuthUsuarioService {
       };
 
       localStorage.setItem('user', JSON.stringify(userData));
+      return userData;
 
     });
 
     
     console.log(user);
-    /*
-    return userRef.set(userData, {
-      merge: true,
-    });
-    */
   };
 
   //CERRAR SESIÓN Y BORRAR TOKEN

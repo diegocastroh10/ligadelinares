@@ -9,7 +9,7 @@
             <h1 class="h2">User Profile</h1>
           </div>
           <!-- Show user data when logged in -->
-          <div class="row" *ngIf="authService.userData as user">
+          <div class="row" *ngIf="authService.getUserData as user">
             <div class="col-md-12">
               <div class="media">
                 <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/img/logo_ligadelinares.jpg'}}"
