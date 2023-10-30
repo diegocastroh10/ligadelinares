@@ -1,0 +1,43 @@
+<section class="vh-100">
+    <div class="container h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form [formGroup]="teamForm" (ngSubmit)="onSubmit()">
+                    <div class="divider d-flex align-items-center my-4">
+                        <p class="text-center fw-bold mx-3 mb-0">Crear un equipo</p>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text" class="form-control form-control-lg"
+                            placeholder="Ejemplo: linares colleges" formControlName="nombreEquipo"/>
+                        <label class="form-label">Nombre</label>
+                    </div>
+
+                    <div class="form-outline mb-3">
+                        <input type="text" class="form-control form-control-lg" placeholder="Descripción equipo" formControlName="descripcionEquipo"/>
+                        <label class="form-label">Descripción</label>
+                    </div>
+
+                    <div class="form-outline mb-3">
+                        <input type="text" class="form-control form-control-lg" placeholder="Categoría equipo" formControlName="categoriaEquipo"/>
+                        <label class="form-label">Categoría Equipo</label>
+                    </div>
+
+                    <div class="form-outline mb-3">
+                        <input type="text" class="form-control form-control-lg" placeholder="Rut: 17601290-0" formControlName="rutEquipo"/>
+                        <label class="form-label">Rut Equipo</label>
+                    </div>
+
+                    <div class="form-outline mb-3">
+                        <input type="text" class="form-control form-control-lg" placeholder="Representante" formControlName="representanteEquipo"/>
+                        <label class="form-label">Representante Equipo</label>
+                    </div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" [disabled]="!teamForm.valid" class="btn btn-primary btn-lg">Crear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

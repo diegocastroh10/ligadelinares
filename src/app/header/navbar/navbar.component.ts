@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AuthUsuarioService } from '../../services/auth-usuario.service';
-import { AuthGuard } from 'src/app/guards/auth.guard';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,7 +13,6 @@ export class NavbarComponent {
 
     constructor(
       public authService: AuthUsuarioService,
-      public authGuard: AuthGuard,
       public router: Router,
     ) {
 

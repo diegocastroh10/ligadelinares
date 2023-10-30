@@ -22,22 +22,11 @@ export class EquiposService {
   }
 
     //
-    async setEquipoData(equipo: any) {
+    setEquipoData(equipo: any, id: string) {
       const equipoRef: AngularFirestoreDocument<any> = this.afs.doc(
-        `equipos/${equipo.uid}`
+        `equipos/${id}`
       );
-      const equipoData: Equipos = { 
-        uid: equipo.uid,
-        nombreEquipo: equipo.nombreEquipo,
-        representanteEquipo: equipo.representanteEquipo,
-        imgEquipo: equipo.imgEquipo,
-        rutEquipo: equipo.emailVerified,
-        descripcionEquipo: equipo.descripcionEquipo,
-        categoriaEquipo: equipo.categoriaEquipo,
-      };
-      console.log(equipo);
-      
-      return equipoRef.set(equipoData, {
+      return equipoRef.set(equipo, {
         merge: true,
       });
       /*

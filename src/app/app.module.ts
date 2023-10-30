@@ -17,7 +17,7 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { LoginAdminComponent } from './pages/login-admin/login-admin.component';
 import { SignupUsuarioComponent } from './pages/signup-usuario/signup-usuario.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //FIREBASE
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -38,6 +38,14 @@ import { SigninUsuarioComponent } from './pages/signin-usuario/signin-usuario.co
 import { VerifyUsuarioComponent } from './pages/verify-usuario/verify-usuario.component';
 import { RestaurarContrasenaComponent } from './pages/restaurar-contrasena/restaurar-contrasena.component';
 import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { AdminEquiposComponent } from './pages/admin-equipos/admin-equipos.component';
+import { AdminNoticiasComponent } from './pages/admin-noticias/admin-noticias.component';
+import { AdminEquiposCrearComponent } from './pages/admin-equipos-crear/admin-equipos-crear.component';
+import { AdminEquiposEditarComponent } from './pages/admin-equipos-editar/admin-equipos-editar.component';
+import { AdminNoticiasEditarComponent } from './pages/admin-noticias-editar/admin-noticias-editar.component';
+import { AdminNoticiasCrearComponent } from './pages/admin-noticias-crear/admin-noticias-crear.component';
+import { AdminEquipoEditarComponent } from './pages/admin-equipo-editar/admin-equipo-editar.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +61,15 @@ import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.co
     SigninUsuarioComponent,
     VerifyUsuarioComponent,
     RestaurarContrasenaComponent,
-    PerfilUsuarioComponent
+    PerfilUsuarioComponent,
+    AdminComponent,
+    AdminEquiposComponent,
+    AdminNoticiasComponent,
+    AdminEquiposCrearComponent,
+    AdminEquiposEditarComponent,
+    AdminNoticiasEditarComponent,
+    AdminNoticiasCrearComponent,
+    AdminEquipoEditarComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +77,7 @@ import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.co
     HttpClientModule,
     FontAwesomeModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
