@@ -106,7 +106,7 @@ export class AuthUsuarioService {
     return user !== null && user.emailVerified !== false && user.tipoUsuario == '1' ? true : false;
   }
 
-  //
+  // CONSULTAS API FIREBASE
   async setUserData(user: any) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `usuarios/${user.uid}`

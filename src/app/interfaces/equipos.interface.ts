@@ -5,4 +5,5 @@ export interface Equipos {
     representanteEquipo: string;
     descripcionEquipo: string;
     categoriaEquipo: string;
+    imgEquipo: string;
 }
