@@ -4,12 +4,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## CSS/SCSS and Bootstrap
 
-This project uses CSS and SCSS (Sass) for styling, and it incorporates the Bootstrap framework. CSS and SCSS provide styling capabilities for your project, and Bootstrap offers a set of pre-designed components and styles to help streamline your web development process.
+This project uses CSS and SCSS for styling, and it incorporates the Bootstrap framework. CSS and SCSS provide styling capabilities for your project, and Bootstrap offers a set of pre-designed components and styles to help streamline your web development process.
 
 To modify the styling or utilize Bootstrap components, you can work with the CSS/SCSS files provided in this project. You can find more information about CSS, SCSS, and Bootstrap on their respective websites:
 
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- [SCSS (Sass)](https://sass-lang.com/)
+- [SCSS](https://sass-lang.com/)
 - [Bootstrap](https://getbootstrap.com/)
 
 Feel free to customize the styling and UI components to match your project's requirements.
