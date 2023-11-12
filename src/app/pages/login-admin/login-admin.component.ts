@@ -1,4 +1,6 @@
 
+//COMPONENTE SIN USO
+
 import { Component, inject } from '@angular/core';
 import { AuthUsuarioService } from '../../services/auth-usuario.service';
 import { Router } from '@angular/router';

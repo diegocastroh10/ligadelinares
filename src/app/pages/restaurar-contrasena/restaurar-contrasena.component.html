@@ -1,18 +1,18 @@
 <div class="displayTable">
     <div class="displayTableCell">
       <div class="authBlock">
-        <h3>Reset Password</h3>
-        <p class="text-center">Please enter your email address to request a password reset.</p>
+        <h3>Restaurar tu contraseña</h3>
+        <p>Ingresa tu dirección de correo electrónico para recibir un link de restauración.</p>
         <div class="formGroup">
-          <input type="email" class="formControl" placeholder="Email Address" #passwordResetEmail required>
+          <input type="email" class="formControl" placeholder="Correo" #passwordResetEmail required>
         </div>
         <!-- Calling ForgotPassword from AuthService Api -->
         <div class="formGroup">
-          <input type="submit" class="btn btnPrimary" value="Reset Password" (click)="authService.forgotPassword(passwordResetEmail.value)">
+          <input type="submit" class="btn btnPrimary" value="Enviar" (click)="authService.forgotPassword(passwordResetEmail.value)">
         </div>
       </div>
       <div class="redirectToLogin">
-        <span>Go back to ? <span class="redirect" routerLink="/signin-usuario">Log In</span></span>
+        <span>¿Ya tienes cuenta?<span class="redirect" routerLink="/signin-usuario">Iniciar sesión</span></span>
       </div>
     </div>
   </div>

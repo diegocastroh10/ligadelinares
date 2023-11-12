@@ -5,12 +5,11 @@ import { ActivatedRoute } from '@angular/router';
 import { EquiposService } from 'src/app/services/equipos.service';
 
 @Component({
-  selector: 'app-admin-equipo-editar',
-  templateUrl: './admin-equipo-editar.component.html',
-  styleUrls: ['./admin-equipo-editar.component.scss']
+  selector: 'app-usuario-equipo',
+  templateUrl: './usuario-equipo.component.html',
+  styleUrls: ['./usuario-equipo.component.scss']
 })
-export class AdminEquipoEditarComponent {
-
+export class UsuarioEquipoComponent {
   id: string;
   teamForm:FormGroup;
   isLoading: boolean = true;
@@ -42,5 +41,6 @@ export class AdminEquipoEditarComponent {
       alert('Ocurrió un error actualizando el equipo');
     });
   }
+
 
 }

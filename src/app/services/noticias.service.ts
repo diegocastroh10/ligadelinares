@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
-import { Equipos } from '../interfaces/equipos.interface';
+import { Noticias } from '../interfaces/noticias.interface';
 import {
   AngularFirestore,
   AngularFirestoreDocument,
@@ -10,7 +10,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 @Injectable({
   providedIn: 'root'
 })
-export class EquiposService {
+export class NoticiasService {
 
   constructor(
     public afs: AngularFirestore,
@@ -22,11 +22,11 @@ export class EquiposService {
   }
 
     //
-    setEquipoData(equipo: any, id: string) {
-      const equipoRef: AngularFirestoreDocument<any> = this.afs.doc(
-        `equipos/${id}`
+    setNoticiaData(noticia: any, id: string) {
+      const noticiaRef: AngularFirestoreDocument<any> = this.afs.doc(
+        `noticias/${id}`
       );
-      return equipoRef.set(equipo, {
+      return noticiaRef.set(noticia, {
         merge: true,
       });
       /*
@@ -35,29 +35,28 @@ export class EquiposService {
       
     };
   
-    async getEquipoData(equipo: any) {
+    async getNoticiaData(noticia: any) {
       /*const userRef: AngularFirestoreDocument<any> = this.afs.doc(
         `usuarios/${user.uid}`
       );*/
-      const equipoRef = this.afs.doc(`equipos/${equipo.rutEquipo}`).valueChanges().subscribe((result:any) => {
+      const noticiaRef = this.afs.doc(`noticias/${noticia.uid}`).valueChanges().subscribe((result:any) => {
         console.log(result);
   
-        const equipoData: Equipos = { 
-          uid: equipo.uid,
-          nombreEquipo: equipo.nombreEquipo,
-          representanteEquipo: equipo.representanteEquipo,
-          imgEquipo: equipo.imgEquipo,
-          rutEquipo: equipo.emailVerified,
-          descripcionEquipo: equipo.descripcionEquipo,
-          categoriaEquipo: equipo.categoriaEquipo,
+        const noticiaData: Noticias = { 
+          tituloNoticia: noticia.tituloNoticia,
+          autorNoticia: noticia.autorNoticia,
+          descripcionNoticia: noticia.descripcionNoticia,
+          fechaNoticia: noticia.fechaNoticia,
+          imgNoticia: noticia.imgNoticia,
+          mostrarNoticia: true,
         };
   
-        localStorage.setItem('user', JSON.stringify(equipoData));
-        return equipoData;
+        localStorage.setItem('user', JSON.stringify(noticiaData));
+        return noticiaData;
   
       });
   
       
-      console.log(equipo);
+      console.log(noticia);
     };
 }

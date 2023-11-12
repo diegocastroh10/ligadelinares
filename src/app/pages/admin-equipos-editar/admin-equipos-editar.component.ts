@@ -13,7 +13,8 @@ export class AdminEquiposEditarComponent {
   equipos: any[] = [];
 
   constructor(
-    public afs: AngularFirestore, private router: Router) {
+    public afs: AngularFirestore,
+    private router: Router) {
     // this.afs.collection('equipos').valueChanges().subscribe( (equipo: any[]) => {
     //   console.log('equipo ', equipo);
     //   this.equipos = equipo;

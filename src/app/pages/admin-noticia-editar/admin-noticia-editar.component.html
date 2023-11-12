@@ -1,0 +1,142 @@
+<section class="vh-100">
+    <div class="container h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form [formGroup]="teamForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
+                    <div class="divider d-flex align-items-center my-4">
+                        <h1 class="text-center fw-bold mx-3 mb-0">Editar noticia</h1>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="tituloNoticia" class="col-sm-2 col-form-label">Titulo</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control form-control-lg"
+                            placeholder="Ingresa tu título" formControlName="tituloNoticia"/>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="autorNoticia" class="col-sm-2 col-form-label">Autor</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control form-control-lg" placeholder="Nombre autor" formControlName="autorNoticia"/>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="descripcionNoticia" class="col-sm-2 col-form-label">Descripcion</label>
+                        <div class="col-sm-12">
+                            <textarea name="descripcionNoticia" id="descripcionNoticia" cols="80" rows="10" formControlName="descripcionNoticia"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">Fecha</label>
+                      <div class="col-sm-10">
+                          <input type="datetime-local" class="form-control form-control-lg" formControlName="fechaNoticia"/>
+                      </div>
+                    </div>
+                    <div class="row mb-3 form-check form-switch">
+                        <div class="col-sm-10">
+                            <label class="form-check-label" for="formSwitchCheckChecked">Mostrar noticia</label>
+
+                            <input type="checkbox" checked="" class="form-control form-check-input" placeholder="" formControlName="mostrarNoticia"/>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="tituloNoticia" class="col-sm-2 col-form-label">Imagen</label>
+                          <div class="col-sm-10">
+                            <input class="form-control" type="file" id="formFile" formControlName="imgNoticia">
+                          </div>
+                    </div>
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" [disabled]="!teamForm.valid" class="btn btn-primary btn-lg">Editar</button>
+                    </div>
+                  </form>
+  </div>
+</div>
+</div>
+                    
+                    <!--
+                    <fieldset class="row mb-3">
+                      <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                      <div class="col-sm-10">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked="">
+                          <label class="form-check-label" for="gridRadios1">
+                            First radio
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                          <label class="form-check-label" for="gridRadios2">
+                            Second radio
+                          </label>
+                        </div>
+                        <div class="form-check disabled">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled="">
+                          <label class="form-check-label" for="gridRadios3">
+                            Third disabled radio
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <div class="row mb-3">
+                      <div class="col-sm-10 offset-sm-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="gridCheck1">
+                          <label class="form-check-label" for="gridCheck1">
+                            Example checkbox
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    -->
+                    
+
+
+<!--
+                <form [formGroup]="teamForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
+                    <div class="divider d-flex align-items-center my-4">
+                        <h1 class="text-center fw-bold mx-3 mb-0">Editar noticia</h1>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label">Título noticia</label>
+                        <input type="text" class="form-control form-control-lg"
+                            placeholder="Ingresa tu título" formControlName="tituloNoticia"/>
+                    </div>
+
+                    <div class="form-outline mb-3">
+                        <label class="form-label">Descripción</label>
+                        <textarea name="descripcionNoticia" id="descripcionNoticia" cols="80" rows="10" formControlName="descripcionNoticia"></textarea>
+                    </div>
+
+                    <div class="form-outline mb-3">
+                        <label class="form-label">Autor</label>
+                        <input type="text" class="form-control form-control-lg" placeholder="Nombre autor" formControlName="autorNoticia"/>
+                    </div>
+
+                    <div class="form-outline mb-3">
+                        <label class="form-label">Fecha</label>
+                        <input type="datetime-local" class="form-control form-control-lg" formControlName="fechaNoticia"/>
+                    </div>
+
+                    <div class="form-outline mb-3">
+                        <label class="form-label">Imagen noticia</label>
+                        <input type="text" class="form-control form-control-lg" placeholder="" formControlName="imgNoticia"/>
+                    </div>
+
+                    <div class="form-outline mb-3">
+                        <label class="form-label">Mostrar noticia</label>
+                        <input type="text" class="form-control form-control-lg" placeholder="" formControlName="mostrarNoticia"/>
+                    </div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" [disabled]="!teamForm.valid" class="btn btn-primary btn-lg">Editar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+
+-->

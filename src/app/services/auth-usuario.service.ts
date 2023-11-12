@@ -118,6 +118,7 @@ export class AuthUsuarioService {
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
       tipoUsuario: '0',
+      nombreUsuario: user.nombreUsuario,
     };
     console.log(user);
     
@@ -144,6 +145,7 @@ export class AuthUsuarioService {
         photoURL: user.photoURL,
         emailVerified: user.emailVerified,
         tipoUsuario: result.tipoUsuario,
+        nombreUsuario: user.nombreUsuario,
       };
 
       localStorage.setItem('user', JSON.stringify(userData));

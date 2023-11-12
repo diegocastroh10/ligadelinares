@@ -5,4 +5,5 @@ export interface AuthUsuarios {
     photoURL: string;
     emailVerified: boolean;
     tipoUsuario: string;
+    nombreUsuario: string;
 }

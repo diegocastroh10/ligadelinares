@@ -46,6 +46,10 @@ import { AdminEquiposEditarComponent } from './pages/admin-equipos-editar/admin-
 import { AdminNoticiasEditarComponent } from './pages/admin-noticias-editar/admin-noticias-editar.component';
 import { AdminNoticiasCrearComponent } from './pages/admin-noticias-crear/admin-noticias-crear.component';
 import { AdminEquipoEditarComponent } from './pages/admin-equipo-editar/admin-equipo-editar.component';
+import { AdminTablaposicionesComponent } from './pages/admin-tablaposiciones/admin-tablaposiciones.component';
+import { AdminNoticiaEditarComponent } from './pages/admin-noticia-editar/admin-noticia-editar.component';
+import { AdminTablaposicionesEquipoComponent } from './pages/admin-tablaposiciones-equipo/admin-tablaposiciones-equipo.component';
+import { UsuarioEquipoComponent } from './pages/usuario-equipo/usuario-equipo.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +73,11 @@ import { AdminEquipoEditarComponent } from './pages/admin-equipo-editar/admin-eq
     AdminEquiposEditarComponent,
     AdminNoticiasEditarComponent,
     AdminNoticiasCrearComponent,
-    AdminEquipoEditarComponent
+    AdminEquipoEditarComponent,
+    AdminTablaposicionesComponent,
+    AdminNoticiaEditarComponent,
+    AdminTablaposicionesEquipoComponent,
+    UsuarioEquipoComponent
   ],
   imports: [
     BrowserModule,

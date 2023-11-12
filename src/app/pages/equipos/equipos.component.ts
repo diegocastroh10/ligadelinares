@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthUsuarioService } from 'src/app/services/auth-usuario.service';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -9,11 +9,23 @@ import { Observable } from 'rxjs';
   styleUrls: ['./equipos.component.scss']
 })
 export class EquiposComponent {
-  equipos: Observable<any[]>;
-  
+  equipos: any[] = [];
+
   constructor(
-    public authService: AuthUsuarioService,
-    public afs: AngularFirestore) {
-        this.equipos = this.afs.collection('equipos').valueChanges();
-      }
+    public afs: AngularFirestore,
+    private router: Router) {
+  }
+
+  ngOnInit(){
+    this.afs.collection("equipos")
+    .get()
+    .subscribe((querySnapshot:any) => {
+      querySnapshot.forEach((doc) => {
+        this.equipos.push({id: doc.id, ...doc.data()})
+        return;
+      });
+    }, (e) => {
+      alert('error al traer informacion');
+    })
+  }
 };

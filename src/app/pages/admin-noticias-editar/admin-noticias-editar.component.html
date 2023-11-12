@@ -1,1 +1,14 @@
-<p>admin-noticias-editar works!</p>
+<div class="container">
+<div class="card-group">
+  <div class="card border" *ngFor="let noticia of noticias">
+    <img class="card-img-top" src="assets/img/equipo_colbun.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ noticia.tituloNoticia }}</h5>
+      <p class="card-text">{{ noticia.descripcionNoticia }}</p>
+      <p class="card-text">{{ noticia.autorNoticia }}</p>
+      <p class="card-text">{{ noticia.fechaNoticia | date: 'dd/MM/yyyy' }}</p>
+      <a [routerLink]="['/admin-noticia-editar', noticia.id]" class="btn btn-primary">Editar noticia</a>
+    </div>
+  </div>
+</div>
+</div>

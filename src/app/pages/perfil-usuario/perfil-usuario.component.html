@@ -6,19 +6,20 @@
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="inner-adjust">
           <div class="pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">User Profile</h1>
+            <h1 class="h2">Perfil Usuario</h1>
           </div>
           <!-- Show user data when logged in -->
-          <div class="row" *ngIf="authService.getUserData as user">
+          <div class="row" *ngIf="usuario">
             <div class="col-md-12">
               <div class="media">
-                <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/img/logo_ligadelinares.jpg'}}"
-                  alt="{{user.displayName}}">
+                <img class="align-self-start mr-5 img-thumbnail rounded-circle img-fluid" src="{{(usuario.photoURL) ? usuario.photoURL : '/assets/img/logo_ligadelinares.jpg'}}"
+                >
                 <div class="media-body">
-                  <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-                  <p>User ID: <strong>{{user.uid}}</strong></p>
-                  <p>Email: <strong>{{user.email}}</strong></p>
-                  <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+                  <p>UID usuario: <strong>{{usuario.uid}}</strong></p>
+                  <p>Correo usuario: <strong>{{usuario.email}}</strong></p>
+                  <p>Nombre usuario: <strong>{{usuario.nombreUsuario}}</strong></p>
+                  <p>Tipo usuario: <strong>{{usuario.tipoUsuario}}</strong></p>
+
                 </div>
               </div>
             </div>

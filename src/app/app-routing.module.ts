@@ -24,13 +24,17 @@ import { AdminEquiposEditarComponent } from './pages/admin-equipos-editar/admin-
 import { AdminNoticiasCrearComponent } from './pages/admin-noticias-crear/admin-noticias-crear.component';
 import { AdminNoticiasEditarComponent } from './pages/admin-noticias-editar/admin-noticias-editar.component';
 import { AdminEquipoEditarComponent } from './pages/admin-equipo-editar/admin-equipo-editar.component';
+import { AdminTablaposicionesComponent } from './pages/admin-tablaposiciones/admin-tablaposiciones.component';
+import { AdminNoticiaEditarComponent } from './pages/admin-noticia-editar/admin-noticia-editar.component';
+import { AdminTablaposicionesEquipoComponent } from './pages/admin-tablaposiciones-equipo/admin-tablaposiciones-equipo.component';
+import { UsuarioEquipoComponent } from './pages/usuario-equipo/usuario-equipo.component';
 
 const routes: Routes = [
   { path: '', component: InicioAdminComponent},
   { path: 'equipos', component: EquiposComponent/*, canActivate: [AuthGuard]*/},
   { path: 'noticias', component: NoticiasComponent},
   { path: 'usuarios', component: UsuariosComponent},
-  { path: 'login-admin', component: LoginAdminComponent},
+  //{ path: 'login-admin', component: LoginAdminComponent},
   { path: 'signup-usuario', component: SignupUsuarioComponent},
   { path: 'signin-usuario', component: SigninUsuarioComponent},
   { path: 'verify-usuario', component: VerifyUsuarioComponent},
@@ -44,6 +48,10 @@ const routes: Routes = [
   { path: 'admin-equipos-editar', component: AdminEquiposEditarComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'admin-equipo-editar/:id', component: AdminEquipoEditarComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'perfil-usuario', component: PerfilUsuarioComponent, canActivate: [AuthGuard]},
+  { path: 'admin-tablaposiciones', component: AdminTablaposicionesComponent, canActivate: [AuthGuard, AdminGuard]},
+  { path: 'admin-noticia-editar/:id', component: AdminNoticiaEditarComponent, canActivate: [AuthGuard, AdminGuard]},
+  { path: 'admin-tablaposiciones-equipo', component: AdminTablaposicionesEquipoComponent, canActivate: [AuthGuard, AdminGuard]},
+  { path: 'usuario-equipo/:id', component: UsuarioEquipoComponent, canActivate: [AuthGuard]},
   //path que redirecciona a la dirección indicada si el link está mal escrito
   { path: '**', pathMatch: 'full', redirectTo: ''}
 ];

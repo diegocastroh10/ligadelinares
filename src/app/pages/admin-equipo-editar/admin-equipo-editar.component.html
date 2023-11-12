@@ -4,33 +4,33 @@
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                 <form [formGroup]="teamForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
                     <div class="divider d-flex align-items-center my-4">
-                        <p class="text-center fw-bold mx-3 mb-0">Crear un equipo</p>
+                        <h1 class="text-center fw-bold mx-3 mb-0">Editar equipo</h1>
                     </div>
 
                     <div class="form-outline mb-4">
+                        <label class="form-label">Nombre</label>
                         <input type="text" class="form-control form-control-lg"
                             placeholder="Ejemplo: linares colleges" formControlName="nombreEquipo"/>
-                        <label class="form-label">Nombre</label>
                     </div>
 
                     <div class="form-outline mb-3">
-                        <input type="text" class="form-control form-control-lg" placeholder="Descripción equipo" formControlName="descripcionEquipo"/>
                         <label class="form-label">Descripción</label>
+                        <input type="text" class="form-control form-control-lg" placeholder="Descripción equipo" formControlName="descripcionEquipo"/>
                     </div>
 
                     <div class="form-outline mb-3">
-                        <input type="text" class="form-control form-control-lg" placeholder="Categoría equipo" formControlName="categoriaEquipo"/>
                         <label class="form-label">Categoría Equipo</label>
+                        <input type="text" class="form-control form-control-lg" placeholder="Categoría equipo" formControlName="categoriaEquipo"/>
                     </div>
 
                     <div class="form-outline mb-3">
-                        <input type="text" class="form-control form-control-lg" placeholder="Rut: 17601290-0" formControlName="rutEquipo"/>
                         <label class="form-label">Rut Equipo</label>
+                        <input type="text" class="form-control form-control-lg" placeholder="Rut: 17601290-0" formControlName="rutEquipo"/>
                     </div>
 
                     <div class="form-outline mb-3">
-                        <input type="text" class="form-control form-control-lg" placeholder="Representante" formControlName="representanteEquipo"/>
                         <label class="form-label">Representante Equipo</label>
+                        <input type="text" class="form-control form-control-lg" placeholder="Representante" formControlName="representanteEquipo"/>
                     </div>
 
                     <div class="text-center text-lg-start mt-4 pt-2">

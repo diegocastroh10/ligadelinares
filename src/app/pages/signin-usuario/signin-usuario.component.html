@@ -1,7 +1,7 @@
 <div class="displayTable d-flex justify-content-center align-items-center min-vh-100">
   <div class="displayTableCell">
     <div class="authBlock">
-      <h3>Sign In</h3>
+      <h3>Iniciar sesión</h3>
       <div class="formGroup">
         <input
           type="text"
@@ -25,25 +25,20 @@
         <input
           type="button"
           class="btn btnPrimary"
-          value="Log in"
+          value="Ingresar"
           (click)="authService.signIn(userName.value, userPassword.value)"
         />
       </div>
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
       <div class="forgotPassword">
-        <span routerLink="/restaurar-contrasena">Forgot Password?</span>
+        <span>¿Olvidaste tu contraseña?</span>
+        <input type="button" class="btn" value="Recuperar" routerLink="/restaurar-contrasena">
       </div>
     </div>
     <div class="redirectToLogin">
       <span
-        >Don't have an account?<span
-          class="redirect"
-          routerLink="/signup-usuario"
-        >
-          Sign Up</span
-        ></span
+        >¿No tienes una cuenta?
+        <input type="button" class="btn" value="Registrarme" routerLink="/signup-usuario">
+        </span
       >
     </div>
   </div>
