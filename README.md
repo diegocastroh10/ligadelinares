@@ -1,6 +1,18 @@
 # AdminLbdl
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5, uses Firebase version 9.23.0 as its database backend. Firebase is a real-time database and backend-as-a-service that provides various features for building web and mobile applications. To get started with Firebase, make sure you have the Firebase SDK installed and configured in your project. You can find more information about Firebase on the [Firebase website](https://firebase.google.com/).
+
+## CSS/SCSS and Bootstrap
+
+This project uses CSS and SCSS for styling, and it incorporates the Bootstrap framework. CSS and SCSS provide styling capabilities for your project, and Bootstrap offers a set of pre-designed components and styles to help streamline your web development process.
+
+To modify the styling or utilize Bootstrap components, you can work with the CSS/SCSS files provided in this project. You can find more information about CSS, SCSS, and Bootstrap on their respective websites:
+
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [SCSS](https://sass-lang.com/)
+- [Bootstrap](https://getbootstrap.com/)
+
+Feel free to customize the styling and UI components to match your project's requirements.
 
 ## Development server
 
