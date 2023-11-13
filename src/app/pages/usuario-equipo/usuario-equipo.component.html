@@ -1,12 +1,15 @@
-<div class="card" *ngIf="equipo">
-    <img src="assets/images/bs-images/img-2x1.png" class="card-img-top" alt="card-img-top">
-    <div class="card-body">
-      <h5 class="card-title">{{ equipo.nombreEquipo }}</h5>
-      <p class="card-text">{{ equipo.descripcionEquipo }}</p>
-      <p class="card-text">{{ equipo.categoriaEquipo }}</p>
-      <p class="card-text">{{ equipo.representanteEquipo }}</p>
-      <p class="card-text"><small class="text-muted">Fundado en 2021</small></p>
-      <a href="#" class="card-link">Instagram</a>
-      <a href="#" class="card-link">Facebook</a>
+<div class="d-flex flex-wrap align-items-center">
+    <div class="card w-100" *ngIf="equipo">
+      <img src="assets/img/logo_colbunmachikura.png" class="card-img-top" alt="card-img-top" style="width: 200px; height: 200px; object-fit: cover;">
+      <div class="card-body">
+        <h5 class="card-title">{{ equipo.nombreEquipo }}</h5>
+        <p class="card-text">Descripción: {{ equipo.descripcionEquipo }}</p>
+        <p class="card-text">Categoría: {{ equipo.categoriaEquipo }}</p>
+        <p class="card-text">Representante: {{ equipo.representanteEquipo }}</p>
+        <p class="card-text"><small class="text-muted">Fundado en 2021</small></p>
+        <a href="#" class="card-link">Instagram</a>
+        <a href="#" class="card-link">Facebook</a>
+      </div>
     </div>
   </div>
+  
