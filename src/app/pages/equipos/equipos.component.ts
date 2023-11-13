@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-equipos',
@@ -25,7 +24,7 @@ export class EquiposComponent {
         return;
       });
     }, (e) => {
-      alert('error al traer informacion');
+      alert('Error al traer información');
     })
   }
 };

@@ -1,1 +1,12 @@
-<p>usuario-equipo works!</p>
+<div class="card" *ngIf="equipo">
+    <img src="assets/images/bs-images/img-2x1.png" class="card-img-top" alt="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{ equipo.nombreEquipo }}</h5>
+      <p class="card-text">{{ equipo.descripcionEquipo }}</p>
+      <p class="card-text">{{ equipo.categoriaEquipo }}</p>
+      <p class="card-text">{{ equipo.representanteEquipo }}</p>
+      <p class="card-text"><small class="text-muted">Fundado en 2021</small></p>
+      <a href="#" class="card-link">Instagram</a>
+      <a href="#" class="card-link">Facebook</a>
+    </div>
+  </div>
