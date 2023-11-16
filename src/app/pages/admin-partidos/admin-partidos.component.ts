@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import {
+  AngularFirestore,
+
+} from '@angular/fire/compat/firestore'; 
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,16 +11,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-partidos.component.scss']
 })
 export class AdminPartidosComponent {
-  partidos : any[] = [];
+  partidos: any[] = [];
+
+
 
   constructor(
-    private afs: AngularFirestore,
-    private router: Router
+    public afs: AngularFirestore,
+    public router: Router,
+    
   ) {
 
   }
 
-  ngOnInit() {
+  ngOnInit(){    
     this.afs.collection("partidos")
     .get()
     .subscribe((querySnapshot:any) => {
@@ -27,8 +33,7 @@ export class AdminPartidosComponent {
       });
     }, (e) => {
       alert('Error al obtener la información.');
-    });   
-    
-  }  
+    });
+  }
 
 }

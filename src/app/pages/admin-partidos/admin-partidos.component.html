@@ -4,15 +4,15 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">FECHA</th>
-          <th scope="col">EQUIPO LOCAL</th>
-          <th scope="col">RESULTADO</th>
-          <th scope="col">EQUIPO VISITA</th>
-          <th scope="col">MEJOR JUGADOR</th>
-          <th scope="col">MÁXIMO ANOTADOR</th>
-          <th scope="col">ÁRBITROS</th>
-          <th scope="col">MESA CONTROL</th>
-          <th scope="col">
+            <th scope="col">Fecha</th>
+            <th scope="col">Equipo Local</th>
+            <th scope="col">Resultado</th>
+            <th scope="col">Equipo Visita</th>
+            <th scope="col">Mejor jugador</th>
+            <th scope="col">Máximo anotador</th>
+            <th scope="col">Árbitros</th>
+            <th scope="col">Mesa control</th>
+            <th scope="col">
             <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"/></svg>
           </th>
         </tr>
@@ -21,16 +21,16 @@
 
       <tbody *ngFor="let partido of partidos">
         <tr>
-          <td>{{ partido.fechaPartido | date: 'dd/MM/yyyy'}}</td>
-          <td>{{partido.equipoLocal}}</td>
+          <th scope="row">{{partido.fechaPartido | date:'dd/MM/yyyy HH:mm'}}</th>
+          <td class="text-center">{{partido.equipoLocal}}</td>
           <td class="text-center">{{partido.resultadoPartido}}</td>
-          <td>{{partido.equipoVisita}}</td>
+          <td class="text-center">{{partido.equipoVisita}}</td>
           <td>{{partido.mvpPartido}}</td>
           <td>{{partido.goleadorPartido}}</td>
           <td>{{partido.arbitrosPartido}}</td>
           <td>{{partido.mesaPartido}}</td>
           <td>
-            <button [routerLink]="['/admin-partidos-editar',equipo.id]">Editar</button>
+            <button>Editar</button>
           </td>
         </tr>
       </tbody>

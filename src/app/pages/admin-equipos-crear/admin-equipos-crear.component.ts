@@ -15,8 +15,8 @@ import { Router } from '@angular/router';
 export class AdminEquiposCrearComponent {
   constructor(
     private equipoService: EquiposService,
-    public afs: AngularFirestore,
-    public router: Router) {
+    private afs: AngularFirestore,
+    private router: Router) {
   }
 
   teamForm = new FormGroup({

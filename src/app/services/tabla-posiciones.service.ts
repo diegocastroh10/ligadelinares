@@ -1,8 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
-import { Observable } from 'rxjs';
-import { Equipos } from '../interfaces/equipos.interface';
-import { TablaPosiciones } from '../interfaces/tabla-posiciones.interface';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 
@@ -28,7 +25,6 @@ export class TablaPosicionesService {
       merge: true,
     });
   };
-
   
 
 };

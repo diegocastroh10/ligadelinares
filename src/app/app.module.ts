@@ -84,7 +84,7 @@ import { AdminPartidosCrearComponent } from './pages/admin-partidos-crear/admin-
     UsuarioEquipoComponent,
     AdminTablaposicionesEquipoeditarComponent,
     AdminPartidosComponent,
-    AdminPartidosCrearComponent
+    AdminPartidosCrearComponent,
   ],
   imports: [
     BrowserModule,
