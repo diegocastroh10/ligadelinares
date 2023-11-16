@@ -54,6 +54,8 @@ import { UsuarioEquipoComponent } from './pages/usuario-equipo/usuario-equipo.co
 import { AdminTablaposicionesEquipoeditarComponent } from './pages/admin-tablaposiciones-equipoeditar/admin-tablaposiciones-equipoeditar.component';
 import { AdminPartidosComponent } from './pages/admin-partidos/admin-partidos.component';
 import { AdminPartidosCrearComponent } from './pages/admin-partidos-crear/admin-partidos-crear.component';
+import { AdminPartidosEditarComponent } from './pages/admin-partidos-editar/admin-partidos-editar.component';
+import { PartidosComponent } from './pages/partidos/partidos.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +87,8 @@ import { AdminPartidosCrearComponent } from './pages/admin-partidos-crear/admin-
     AdminTablaposicionesEquipoeditarComponent,
     AdminPartidosComponent,
     AdminPartidosCrearComponent,
+    AdminPartidosEditarComponent,
+    PartidosComponent,
   ],
   imports: [
     BrowserModule,

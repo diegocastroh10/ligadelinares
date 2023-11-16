@@ -31,6 +31,8 @@ import { UsuarioEquipoComponent } from './pages/usuario-equipo/usuario-equipo.co
 import { AdminTablaposicionesEquipoeditarComponent } from './pages/admin-tablaposiciones-equipoeditar/admin-tablaposiciones-equipoeditar.component';
 import { AdminPartidosComponent } from './pages/admin-partidos/admin-partidos.component';
 import { AdminPartidosCrearComponent } from './pages/admin-partidos-crear/admin-partidos-crear.component';
+import { AdminPartidosEditarComponent } from './pages/admin-partidos-editar/admin-partidos-editar.component';
+import { PartidosComponent } from './pages/partidos/partidos.component';
 
 const routes: Routes = [
   { path: '', component: InicioAdminComponent},
@@ -58,6 +60,8 @@ const routes: Routes = [
   { path: 'usuario-equipo/:id', component: UsuarioEquipoComponent, canActivate: [AuthGuard]},
   { path: 'admin-partidos', component: AdminPartidosComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'admin-partidos-crear', component: AdminPartidosCrearComponent, canActivate: [AuthGuard, AdminGuard]},
+  { path: 'admin-partidos-editar/:id', component: AdminPartidosEditarComponent, canActivate: [AuthGuard, AdminGuard]},
+  { path: 'partidos', component: PartidosComponent, canActivate: [AuthGuard]},
   //path que redirecciona a la dirección indicada si el link está mal escrito
   { path: '**', pathMatch: 'full', redirectTo: ''}
 ];
