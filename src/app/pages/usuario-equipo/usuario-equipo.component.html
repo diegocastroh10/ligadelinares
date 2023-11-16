@@ -1,6 +1,6 @@
-<div class="d-flex flex-wrap align-items-center">
+<!--
     <div class="card w-100" *ngIf="equipo">
-      <img src="assets/img/logo_colbunmachikura.png" class="card-img-top" alt="card-img-top" style="width: 200px; height: 200px; object-fit: cover;">
+      <img src="assets/img/logo_colbunmachikura.png" class="card-img-top" alt="card-img-top" >
       <div class="card-body">
         <h5 class="card-title">{{ equipo.nombreEquipo }}</h5>
         <p class="card-text">Descripción: {{ equipo.descripcionEquipo }}</p>
@@ -11,5 +11,26 @@
         <a href="#" class="card-link">Facebook</a>
       </div>
     </div>
+  -->
+<div class="d-flex flex-wrap align-items-center">
+  <div class="card" *ngIf="equipo">
+    <div class="row g-0">
+      <div class="col-5 col-sm-4">
+        <img src="assets/img/logo_colbunmachikura.png" class="img-fluid w-100" alt="card-horizontal-image">
+      </div>
+      <div class="col-7 col-sm-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ equipo.nombreEquipo }}</h5>
+          <p class="card-text">Descripción: {{ equipo.descripcionEquipo }}</p>
+          <p class="card-text">Categoría: {{ equipo.categoriaEquipo }}</p>
+          <p class="card-text">Representante: {{ equipo.representanteEquipo }}</p>
+          <p class="card-text"><small class="text-muted">Fundado en 2021</small></p>
+          <a href="#" class="card-link">Instagram</a>
+          <a href="#" class="card-link">Facebook</a>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+
   

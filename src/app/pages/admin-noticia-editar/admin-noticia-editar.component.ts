@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NoticiasService } from 'src/app/services/noticias.service';
 
 @Component({
@@ -16,7 +16,8 @@ export class AdminNoticiaEditarComponent {
   constructor(
     private noticiaService: NoticiasService, 
     private route: ActivatedRoute, 
-    private afs: AngularFirestore) 
+    private afs: AngularFirestore,
+    private router: Router) 
   {
 
   };
@@ -41,6 +42,17 @@ export class AdminNoticiaEditarComponent {
       alert('Noticia actualizada correctamente.');
     }).catch( () => {
       alert('Ocurrió un error modificando tu noticia.');
+    });
+  };
+
+  eliminarEquipo() {
+    this.afs.collection('noticias').doc(this.id).delete()
+    .then( () => {
+      alert('Noticia eliminada.');
+      this.router.navigate(['/admin-noticias-editar']);
+    })
+    .catch( () => {
+      alert('Error al eliminar noticia, intente nuevamente.');
     });
   };
 

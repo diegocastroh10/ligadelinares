@@ -27,6 +27,8 @@ export class TablaPosicionesService {
     return tablaRef.set(equipo, {
       merge: true,
     });
-  }
+  };
+
+  
 
 };

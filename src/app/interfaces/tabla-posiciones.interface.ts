@@ -1,10 +1,13 @@
 export interface TablaPosiciones {
-    masMenosTorneo: number;
-    partidosJugados: number;
-    posicionEquipo: number;
-    puntajeTorneo: number;
-    puntosContra: number;
-    puntosFavor: number;
-    rutEquipo: string;
-    uidTorneo: string;
+    nombreEquipo: string,
+    masMenosTorneo: number,
+    partidosJugados: number,
+    posicionEquipo: number,
+    puntajeEquipo: number,
+    puntosContra: number,
+    puntosFavor: number,
+    uidTorneo: string,
+    rutEquipo: string,
+    partidosGanados: number,
+    partidosPerdidos: number,
 }

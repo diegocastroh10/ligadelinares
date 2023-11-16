@@ -28,6 +28,9 @@ import { AdminTablaposicionesComponent } from './pages/admin-tablaposiciones/adm
 import { AdminNoticiaEditarComponent } from './pages/admin-noticia-editar/admin-noticia-editar.component';
 import { AdminTablaposicionesEquipoComponent } from './pages/admin-tablaposiciones-equipo/admin-tablaposiciones-equipo.component';
 import { UsuarioEquipoComponent } from './pages/usuario-equipo/usuario-equipo.component';
+import { AdminTablaposicionesEquipoeditarComponent } from './pages/admin-tablaposiciones-equipoeditar/admin-tablaposiciones-equipoeditar.component';
+import { AdminPartidosComponent } from './pages/admin-partidos/admin-partidos.component';
+import { AdminPartidosCrearComponent } from './pages/admin-partidos-crear/admin-partidos-crear.component';
 
 const routes: Routes = [
   { path: '', component: InicioAdminComponent},
@@ -51,7 +54,10 @@ const routes: Routes = [
   { path: 'admin-tablaposiciones', component: AdminTablaposicionesComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'admin-noticia-editar/:id', component: AdminNoticiaEditarComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'admin-tablaposiciones-equipo', component: AdminTablaposicionesEquipoComponent, canActivate: [AuthGuard, AdminGuard]},
+  { path: 'admin-tablaposiciones-equipoeditar/:id', component: AdminTablaposicionesEquipoeditarComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'usuario-equipo/:id', component: UsuarioEquipoComponent, canActivate: [AuthGuard]},
+  { path: 'admin-partidos', component: AdminPartidosComponent, canActivate: [AuthGuard, AdminGuard]},
+  { path: 'admin-partidos-crear', component: AdminPartidosCrearComponent, canActivate: [AuthGuard, AdminGuard]},
   //path que redirecciona a la dirección indicada si el link está mal escrito
   { path: '**', pathMatch: 'full', redirectTo: ''}
 ];

@@ -12,7 +12,7 @@ export class AdminNoticiasEditarComponent {
   noticias: any[] = [];
 
   constructor(
-    public afs: AngularFirestore, 
+    private afs: AngularFirestore, 
     private router: Router) {
     // this.afs.collection('noticias').valueChanges().subscribe( (noticia: any[]) => {
     //   console.log('equipo ', equipo);

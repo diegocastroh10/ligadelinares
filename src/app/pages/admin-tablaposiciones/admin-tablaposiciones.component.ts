@@ -3,12 +3,6 @@ import {
   AngularFirestore,
 
 } from '@angular/fire/compat/firestore'; 
-import { Observable } from 'rxjs';
-import { Equipos } from 'src/app/interfaces/equipos.interface';
-import { TablaPosiciones } from 'src/app/interfaces/tabla-posiciones.interface';
-import { EquiposService } from '../../services/equipos.service';
-import { TablaPosicionesService } from 'src/app/services/tabla-posiciones.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,19 +11,34 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-tablaposiciones.component.scss']
 })
 export class AdminTablaposicionesComponent {
+  equipoTabla: any[] = [];
 
-  equipos: Observable<Equipos[]>;
-  equiposTabla: Observable<TablaPosiciones[]>;
+
 
   constructor(
     public afs: AngularFirestore,
-    private equipoService: EquiposService,
-    private tablaposicionesService: TablaPosicionesService,
     public router: Router,
     
   ) {
-    this.equipos = afs.collection<Equipos>('equipos').valueChanges();
-    this.equiposTabla = afs.collection<TablaPosiciones>('tablaposiciones').valueChanges();
+
+  }
+
+  ngOnInit(){    
+    this.afs.collection("tablaposiciones")
+    .get()
+    .subscribe((querySnapshot:any) => {
+      querySnapshot.forEach((doc) => {
+        this.equipoTabla.push({id: doc.id, ...doc.data()})
+        return;
+      });
+      this.ordenarPosicion();
+    }, (e) => {
+      alert('Error al obtener la información.');
+    });
+  }
+
+  ordenarPosicion() {
+    this.equipoTabla.sort( (a, b) => a.posicionEquipo - b.posicionEquipo);
   }
 
 

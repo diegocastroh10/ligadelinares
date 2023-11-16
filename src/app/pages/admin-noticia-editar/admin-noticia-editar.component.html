@@ -1,10 +1,11 @@
 <section class="vh-100">
     <div class="container h-custom">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <div class="row d-flex h-100">
                 <form [formGroup]="teamForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
+                  <div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xxl-2">
+                    <div class="col mb-10">
                     <div class="divider d-flex align-items-center my-4">
-                        <h1 class="text-center fw-bold mx-3 mb-0">Editar noticia</h1>
+                        <h3 class="text-center fw-bold mx-3 mb-0">Editar noticia</h3>
                     </div>
 
                     <div class="row mb-3">
@@ -26,11 +27,24 @@
                             <textarea name="descripcionNoticia" id="descripcionNoticia" cols="80" rows="10" formControlName="descripcionNoticia"></textarea>
                         </div>
                     </div>
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                      <button type="submit" [disabled]="!teamForm.valid" class="btn btn-primary btn-lg">Editar</button>
+                    </div>
+                    </div>
+
+                    <div class="col">
+                        <br><br><br>
                     <div class="row mb-3">
                       <label for="inputPassword3" class="col-sm-2 col-form-label">Fecha</label>
                       <div class="col-sm-10">
                           <input type="datetime-local" class="form-control form-control-lg" formControlName="fechaNoticia"/>
                       </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="tituloNoticia" class="col-sm-2 col-form-label">Imagen</label>
+                        <div class="col-sm-10">
+                          <input class="form-control" type="file" id="formFile" formControlName="imgNoticia">
+                        </div>
                     </div>
                     <div class="row mb-3 form-check form-switch">
                         <div class="col-sm-10">
@@ -38,22 +52,13 @@
 
                             <input type="checkbox" checked="" class="form-control form-check-input" placeholder="" formControlName="mostrarNoticia"/>
                         </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label for="tituloNoticia" class="col-sm-2 col-form-label">Imagen</label>
-                          <div class="col-sm-10">
-                            <input class="form-control" type="file" id="formFile" formControlName="imgNoticia">
-                          </div>
-                    </div>
-                    <div class="text-center text-lg-start mt-4 pt-2">
-                        <button type="submit" [disabled]="!teamForm.valid" class="btn btn-primary btn-lg">Editar</button>
-                    </div>
-                  </form>
+                    </div>                   
+            </div>                
+          </div>
+        </form>
+        <button (click)="eliminarEquipo()" class="btn btn-danger btn-lg">Eliminar</button>
   </div>
-</div>
-</div>
-                    
+
                     <!--
                     <fieldset class="row mb-3">
                       <legend class="col-form-label col-sm-2 pt-0">Radios</legend>

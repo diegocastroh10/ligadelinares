@@ -1,10 +1,10 @@
 <div class="card-group">
     <div class="card border" *ngFor="let equipo of equipos">
-      <img class="card-img-top" src="assets/img/equipo_colbun.png" alt="Card image cap">
-      <div class="card-body">
+      <img class="card-img-top" src="assets/img/logo_linarescolleges.png" alt="Card image cap">
+      <div class="card-body d-flex flex-column">
         <h5 class="card-title">{{ equipo.nombreEquipo }}</h5>
         <p class="card-text">{{ equipo.descripcionEquipo }}</p>
-        <a [routerLink]="['/admin-equipo-editar', equipo.id]" class="btn btn-primary">Editar equipo</a>
+        <a [routerLink]="['/admin-equipo-editar', equipo.id]" class="btn btn-primary mt-auto">Editar equipo</a>
       </div>
     </div>
-  </div>
+</div>

@@ -5,6 +5,7 @@ import {
   AngularFirestore,
 
 } from '@angular/fire/compat/firestore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-equipos-crear',
@@ -14,7 +15,8 @@ import {
 export class AdminEquiposCrearComponent {
   constructor(
     private equipoService: EquiposService,
-    public afs: AngularFirestore) {
+    public afs: AngularFirestore,
+    public router: Router) {
   }
 
   teamForm = new FormGroup({
@@ -29,6 +31,7 @@ export class AdminEquiposCrearComponent {
     this.equipoService.setEquipoData(this.teamForm.value, this.afs.createId()).then( () => {
       alert('Equipo creado correctamente.');
       this.teamForm.reset();
+      this.router.navigate(['/equipos']);
     }).catch( () => {
       alert('No ha sido posible crear el equipo.');
     });

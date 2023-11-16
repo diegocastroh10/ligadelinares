@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EquiposService } from 'src/app/services/equipos.service';
 
 @Component({
@@ -17,7 +17,8 @@ export class AdminEquipoEditarComponent {
   constructor(
     private equipoService: EquiposService,
     private route: ActivatedRoute, 
-    private afs: AngularFirestore) {
+    private afs: AngularFirestore,
+    private router: Router) {
 
   }
 
@@ -37,10 +38,22 @@ export class AdminEquipoEditarComponent {
 
   onSubmit() {
     this.equipoService.setEquipoData(this.teamForm.value, this.id).then( () => {
-      alert('Equipo Actualizado correctamente');
+      alert('Equipo actualizado correctamente');
+      this.router.navigate(['/equipos']);
     }).catch( () => {
       alert('Ocurrió un error actualizando el equipo');
     });
   }
+
+  eliminarEquipo() {
+    this.afs.collection('equipos').doc(this.id).delete()
+    .then( () => {
+      alert('Equipo eliminado.');
+      this.router.navigate(['/admin-equipos-editar']);
+    })
+    .catch( () => {
+      alert('Error al eliminar equipo, intente nuevamente.');
+    });
+  };
 
 }

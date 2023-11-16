@@ -17,6 +17,7 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { LoginAdminComponent } from './pages/login-admin/login-admin.component';
 import { SignupUsuarioComponent } from './pages/signup-usuario/signup-usuario.component';
 
+//FORMS
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //FIREBASE
@@ -50,6 +51,9 @@ import { AdminTablaposicionesComponent } from './pages/admin-tablaposiciones/adm
 import { AdminNoticiaEditarComponent } from './pages/admin-noticia-editar/admin-noticia-editar.component';
 import { AdminTablaposicionesEquipoComponent } from './pages/admin-tablaposiciones-equipo/admin-tablaposiciones-equipo.component';
 import { UsuarioEquipoComponent } from './pages/usuario-equipo/usuario-equipo.component';
+import { AdminTablaposicionesEquipoeditarComponent } from './pages/admin-tablaposiciones-equipoeditar/admin-tablaposiciones-equipoeditar.component';
+import { AdminPartidosComponent } from './pages/admin-partidos/admin-partidos.component';
+import { AdminPartidosCrearComponent } from './pages/admin-partidos-crear/admin-partidos-crear.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +81,10 @@ import { UsuarioEquipoComponent } from './pages/usuario-equipo/usuario-equipo.co
     AdminTablaposicionesComponent,
     AdminNoticiaEditarComponent,
     AdminTablaposicionesEquipoComponent,
-    UsuarioEquipoComponent
+    UsuarioEquipoComponent,
+    AdminTablaposicionesEquipoeditarComponent,
+    AdminPartidosComponent,
+    AdminPartidosCrearComponent
   ],
   imports: [
     BrowserModule,

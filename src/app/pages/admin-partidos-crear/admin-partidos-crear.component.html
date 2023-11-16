@@ -1,0 +1,96 @@
+<section class="vh-100">
+    <div class="container h-custom">
+        <div class="row d-flex h-100">
+                <form [formGroup]="teamForm" (ngSubmit)="onSubmit()">
+                    <div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xxl-2">
+                    <div class="col">
+                    <div class="divider d-flex align-items-center my-4">
+                        <p class="text-center fw-bold mx-4 mb-0">Agregar partido</p>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="uidTorneo" class="col-sm-12 col-md-2 col-form-label">ID Torneo</label>
+                          <div class="col-sm-12 col-md-10">
+                              <input type="text" class="form-control form-control-lg"
+                              placeholder="LBDL-TCV-2023" formControlName="uidTorneo"/>
+                          </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="fechaNoticia" class="col-sm-2 col-form-label">Fecha</label>
+                        <div class="col-sm-10">
+                            <input type="datetime-local" class="form-control form-control-lg" formControlName="fechaNoticia"/>
+                        </div>
+                    </div>
+                      
+                    <div class="row mb-3">
+                        <label for="equipoLocal" class="col-sm-12 col-md-2 col-form-label">Equipo Local</label>
+                          <div class="col-sm-12 col-md-10">
+                              <input type="text" class="form-control form-control-lg"
+                              placeholder="Linares Colleges" formControlName="equipoLocal"/>
+                          </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="equipoVisita" class="col-sm-12 col-md-2 col-form-label">Equipo Visita</label>
+                          <div class="col-sm-12 col-md-10">
+                              <input type="text" class="form-control form-control-lg"
+                              placeholder="Provicial Linares" formControlName="equipoVisita"/>
+                          </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <label for="resultadoPartido" class="col-sm-12 col-md-2 col-form-label">Resultado</label>
+                          <div class="col-sm-12 col-md-10">
+                              <input type="text" class="form-control form-control-lg"
+                              placeholder="98 - 83" formControlName="resultadoPartido"/>
+                          </div>
+                    </div>
+                </div>
+
+                <div class="col">
+<br>
+                    <div class="divider d-flex align-items-center my-4">
+                        <p class="text-center fw-bold mx-3 mb-0"></p>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="mvpPartido" class="col-sm-12 col-md-2 col-form-label">Mejor jugador</label>
+                          <div class="col-sm-12 col-md-10">
+                              <input type="text" class="form-control form-control-lg"
+                              placeholder="Jugador" formControlName="mvpPartido"/>
+                          </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="goleadorPartido" class="col-sm-12 col-md-2 col-form-label">Máximo anotador</label>
+                          <div class="col-sm-12 col-md-10">
+                              <input type="text" class="form-control form-control-lg"
+                              placeholder="Jugador (13pts)" formControlName="goleadorPartido"/>
+                          </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="arbitrosPartido" class="col-sm-12 col-md-2 col-form-label">Árbitros</label>
+                          <div class="col-sm-12 col-md-10">
+                              <input type="text" class="form-control form-control-lg"
+                              placeholder="Arbitro 1 - Arbitro 2" formControlName="arbitrosPartido"/>
+                          </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="mesaPartido" class="col-sm-12 col-md-2 col-form-label">Mesa control</label>
+                          <div class="col-sm-12 col-md-10">
+                              <input type="text" class="form-control form-control-lg"
+                              placeholder="Planiller@ 1 - Planiller@ 2 - Planiller@ 3" formControlName="mesaPartido"/>
+                          </div>
+                    </div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" class="btn btn-primary btn-lg">Crear</button>
+                    </div>
+                </div>
+            </div>
+                </form>
+            </div>
+        </div>
+</section>

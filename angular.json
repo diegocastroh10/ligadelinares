@@ -102,7 +102,9 @@
               "src/styles.scss"
       
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/tablesorter/dist/js/jquery.tablesorter.min.js"
+            ]
           }
         }
       }

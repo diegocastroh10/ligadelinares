@@ -5,6 +5,7 @@ import {
   AngularFirestore,
 
 } from '@angular/fire/compat/firestore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-noticias-crear',
@@ -14,7 +15,8 @@ import {
 export class AdminNoticiasCrearComponent {
   constructor(
     private noticiaService: NoticiasService,
-    public afs: AngularFirestore) {
+    public afs: AngularFirestore,
+    private router: Router) {
 
   }
 
@@ -31,9 +33,10 @@ export class AdminNoticiasCrearComponent {
     this.noticiaService.setNoticiaData(this.teamForm.value, this.afs.createId()).then( () => {
       alert('Noticia creada correctamente.');
       this.teamForm.reset();
+      this.router.navigate(['admin-noticias-editar'])
     }).catch( () => {
       alert('No ha sido posible redactar su noticia.');
     });
-  }
+  };
 
 }
