@@ -23,15 +23,17 @@
           </li>
           <li class="rk-menu__item" routerLinkActive="active"><a routerLink="noticias" class="rk-menu__link">Noticias</a>
             <nav class="rk-menu__sub">
+              <!--
               <ul class="rk-container">
+                
                 <li class="rk-menu__item"><a routerLink="about.html" class="rk-menu__link">About</a></li>
                 <li class="rk-menu__item"><a routerLink="documentation.html" class="rk-menu__link">Documentation</a></li>
                 <li class="rk-menu__item"><a routerLink="design-styles.html" class="rk-menu__link">Design Styles</a></li>
               </ul>
+              -->
             </nav>
           </li>
-          <li class="rk-menu__item"><a routerLink="contact.html" class="rk-menu__link">Contacto</a>
-          </li>
+          
           <div *ngIf="authService.isLoggedIn">
             <li class="rk-menu__item rk-menu__button">
               <button type="click" (click)="viewProfile()" class="btn btn-primary btn-lg">

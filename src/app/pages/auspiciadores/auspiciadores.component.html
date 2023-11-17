@@ -1,7 +1,3 @@
-<div>
-    <button routerLink="/admin-auspiciadores-crear">Agregar auspiciador</button>
-</div>
-<br>
 <div class="card-group">
   <div class="card border" *ngFor="let auspiciador of auspiciadores">
     <img class="card-img-top w-100" style="max-height: 250px;" src="assets/img/logo_linarescolleges.png" alt="Card image cap">
@@ -10,7 +6,7 @@
       <p class="card-text">Dirección: {{ auspiciador.direccionAuspiciador }}</p>
       <p class="card-text">Instagram: {{ auspiciador.instagramAuspiciador }}</p>
       <p class="card-text">Facebook: {{ auspiciador.facebookAuspiciador }}</p>
-      <a [routerLink]="['/admin-auspiciadores-editar', auspiciador.id]" class="btn btn-primary mt-auto">Editar auspiciador</a>
+      <a [routerLink]="['/usuario-auspiciador', auspiciador.id]" class="btn btn-primary mt-auto">Editar auspiciador</a>
     </div>
   </div>
 </div>

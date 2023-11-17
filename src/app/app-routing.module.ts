@@ -36,6 +36,8 @@ import { UsuarioNoticiasComponent } from './pages/usuario-noticias/usuario-notic
 import { HomeComponent } from './pages/home/home.component';
 import { AdminAuspiciadoresComponent } from './pages/admin-auspiciadores/admin-auspiciadores.component';
 import { AdminAuspiciadoresCrearComponent } from './pages/admin-auspiciadores-crear/admin-auspiciadores-crear.component';
+import { AdminAuspiciadoresEditarComponent } from './pages/admin-auspiciadores-editar/admin-auspiciadores-editar.component';
+import { AuspiciadoresComponent } from './pages/auspiciadores/auspiciadores.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -70,6 +72,8 @@ const routes: Routes = [
   { path: 'usuario-noticias/:id', component: UsuarioNoticiasComponent, canActivate: [AuthGuard]},
   { path: 'admin-auspiciadores', component: AdminAuspiciadoresComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'admin-auspiciadores-crear', component: AdminAuspiciadoresCrearComponent, canActivate: [AuthGuard, AdminGuard]},
+  { path: 'admin-auspiciadores-editar/:id', component: AdminAuspiciadoresEditarComponent, canActivate: [AuthGuard, AdminGuard]},
+  { path: 'auspiciadores', component: AuspiciadoresComponent },
   //path que redirecciona a la dirección indicada si el link está mal escrito
   { path: '**', pathMatch: 'full', redirectTo: ''}
 ];

@@ -59,6 +59,8 @@ import { environment } from '../environments/environment';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminAuspiciadoresComponent } from './pages/admin-auspiciadores/admin-auspiciadores.component';
 import { AdminAuspiciadoresCrearComponent } from './pages/admin-auspiciadores-crear/admin-auspiciadores-crear.component';
+import { AdminAuspiciadoresEditarComponent } from './pages/admin-auspiciadores-editar/admin-auspiciadores-editar.component';
+import { AuspiciadoresComponent } from './pages/auspiciadores/auspiciadores.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +97,8 @@ import { AdminAuspiciadoresCrearComponent } from './pages/admin-auspiciadores-cr
     HomeComponent,
     AdminAuspiciadoresComponent,
     AdminAuspiciadoresCrearComponent,
+    AdminAuspiciadoresEditarComponent,
+    AuspiciadoresComponent,
   ],
   imports: [
     BrowserModule,
