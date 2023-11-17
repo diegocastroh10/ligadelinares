@@ -20,7 +20,10 @@ export class NoticiasComponent {
   }
 
   ngOnInit(){
-    this.afs.collection("noticias")
+    this.afs.collection("noticias", busqueda => {
+     return busqueda.where('mostrarNoticia', '==', true)
+     //.where('authorized', '==', true )
+    })
     .get()
     .subscribe((querySnapshot:any) => {
       querySnapshot.forEach((doc) => {

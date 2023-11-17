@@ -4,62 +4,44 @@
                 <form [formGroup]="teamForm" (ngSubmit)="onSubmit()">
                     <div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xxl-2">
                         <div class="col mb-10">
-                    <div class="divider d-flex align-items-center my-4">
-                        <p class="text-center fw-bold mx-3 mb-0">Redactar noticia</p>
-                    </div>
+                            <div class="divider d-flex align-items-center my-4">
+                                <p class="text-center fw-bold mx-3 mb-0">Agregar auspiciador</p>
+                            </div>
 
-                    <div class="row mb-3">
-                        <label for="tituloNoticia" class="col-sm-2 col-form-label">Titulo</label>
-                          <div class="col-sm-10">
-                              <input type="text" class="form-control form-control-lg"
-                              placeholder="EJ: CAMPEÓN LIGA DE LINARES 2023" formControlName="tituloNoticia"/>
-                          </div>
-                    </div>
-                    
-                    <div class="row mb-3">
-                        <label for="autorNoticia" class="col-sm-2 col-form-label">Autor</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control form-control-lg" placeholder="Nombre autor" formControlName="autorNoticia"/>
+                            <div class="form-outline mb-4">
+                                <label class="form-label">Nombre</label>
+                                <input type="text" class="form-control form-control-lg"
+                                    placeholder="Ejemplo: linares colleges" formControlName="nombreAuspiciador"/>
+                            </div>
+
+                            <div class="form-outline mb-3">
+                                <label class="form-label">Dirección</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Descripción equipo" formControlName="direccionAuspiciador"/>
+                            </div>
+
+                            <div class="form-outline mb-3">
+                                <label class="form-label">Instagram</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Categoría equipo" formControlName="instagramAuspiciador"/>
+                            </div>
+                        </div>
+
+                        <div class="col mb-10"> 
+                            <br><br><br>
+                            <div class="form-outline mb-3">
+                                <label class="form-label">Facebook</label>
+                                <input type="text" name="rutEquipo" id="rutEquipo" class="form-control form-control-lg" placeholder="Rut: 17601290-0" formControlName="facebookAuspiciador"/>
+                            </div>
+
+                            <div class="form-outline mb-3">
+                                <label class="form-label">Imagen</label>
+                                <input type="file" name="" class="form-control form-control-lg" placeholder="Representante" formControlName="imgAuspiciador"/>
+                            </div>
+
+                            <div class="text-center text-lg-start mt-4 pt-2">
+                                <button type="submit" [disabled]="!teamForm.valid" class="btn btn-primary btn-lg">Crear</button>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="row mb-3">
-                        <label for="descripcionNoticia" class="col-sm-2 col-form-label">Descripcion</label>
-                        <div class="col-sm-12">
-                            <textarea name="descripcionNoticia" id="descripcionNoticia" cols="80" rows="10" formControlName="descripcionNoticia"></textarea>
-                        </div>
-                    </div>
-                    <div class="text-center text-lg-start mt-4 pt-2">
-                        <button type="submit" [disabled]="!teamForm.valid" class="btn btn-primary btn-lg">Crear</button>
-                    </div>
-                    </div>
-
-                    <div class="col">
-                        <br><br><br>
-                    <div class="row mb-3">
-                        <label for="inputPassword3" class="col-sm-2 col-form-label">Fecha</label>
-                        <div class="col-sm-10">
-                            <input type="datetime-local" class="form-control form-control-lg" formControlName="fechaNoticia"/>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3 form-check form-switch">
-                        <div class="col-sm-10">
-                            <label class="form-check-label" for="formSwitchCheckChecked">Mostrar noticia</label>
-                            <input type="checkbox" checked="" class="form-control form-check-input" placeholder="" formControlName="mostrarNoticia"/>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label for="tituloNoticia" class="col-sm-2 col-form-label">Imagen</label>
-                          <div class="col-sm-10">
-                            <input class="form-control" type="file" id="formFile" formControlName="imgNoticia">
-                          </div>
-                    </div>
-
-                    
-                    </div>
-                </div>
                 </form>
             </div>
         </div>

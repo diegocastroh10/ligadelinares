@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthUsuarioService } from 'src/app/services/auth-usuario.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AdminComponent {
 
+  constructor(public authService: AuthUsuarioService) {
+  }
 }

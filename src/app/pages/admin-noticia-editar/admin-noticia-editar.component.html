@@ -50,13 +50,13 @@
                         <div class="col-sm-10">
                             <label class="form-check-label" for="formSwitchCheckChecked">Mostrar noticia</label>
 
-                            <input type="checkbox" checked="" class="form-control form-check-input" placeholder="" formControlName="mostrarNoticia"/>
+                            <input type="checkbox" checked="" class="form-control form-check-input" placeholder="" formControlName="mostrarNoticia" />
                         </div>
                     </div>                   
             </div>                
           </div>
         </form>
-        <button (click)="eliminarEquipo()" class="btn btn-danger btn-lg">Eliminar</button>
+        <button *ngIf="authService.isAdmindIn" (click)="eliminarEquipo()" class="btn btn-danger btn-lg">Eliminar</button>
   </div>
 
                     <!--

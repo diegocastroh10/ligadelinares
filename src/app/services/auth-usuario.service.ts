@@ -101,9 +101,19 @@ export class AuthUsuarioService {
     return user !== null && user.emailVerified !== false ? true : false;
   }
 
+  get isUser(): boolean {
+    const user = JSON.parse(localStorage.getItem('user')!);
+    return user !== null && user.emailVerified !== false && user.tipoUsuario == '0' ? true : false;
+  }
+
   get isAdmindIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user')!);
     return user !== null && user.emailVerified !== false && user.tipoUsuario == '1' ? true : false;
+  }
+
+  get isAuthor(): boolean {
+    const user = JSON.parse(localStorage.getItem('user')!);
+    return user !== null && user.emailVerified !== false && user.tipoUsuario == '2' ? true : false;
   }
 
   // CONSULTAS API FIREBASE

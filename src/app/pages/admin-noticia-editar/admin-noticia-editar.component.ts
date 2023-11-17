@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthUsuarioService } from 'src/app/services/auth-usuario.service';
 import { NoticiasService } from 'src/app/services/noticias.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class AdminNoticiaEditarComponent {
     private noticiaService: NoticiasService, 
     private route: ActivatedRoute, 
     private afs: AngularFirestore,
-    private router: Router) 
+    private router: Router,
+    public authService: AuthUsuarioService) 
   {
 
   };
@@ -30,7 +32,7 @@ export class AdminNoticiaEditarComponent {
         autorNoticia: new FormControl(noticia.autorNoticia, Validators.required),
         descripcionNoticia: new FormControl(noticia.descripcionNoticia, Validators.required),
         fechaNoticia: new FormControl(noticia.fechaNoticia, Validators.required),
-        mostrarNoticia: new FormControl(noticia.mostrarNoticia),
+        mostrarNoticia: new FormControl({value: noticia.mostrarNoticia, disabled: this.authService.isAuthor } ),
         imgNoticia: new FormControl(noticia.imgNoticia, Validators.required),
       });
       this.isLoading = false;

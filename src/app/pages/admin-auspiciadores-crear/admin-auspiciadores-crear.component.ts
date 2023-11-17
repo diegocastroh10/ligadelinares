@@ -13,30 +13,32 @@ import { Router } from '@angular/router';
 })
 export class AdminAuspiciadoresCrearComponent {
   constructor(
-    private auspiciadoresServices: AuspiciadoresService,
-    public afs: AngularFirestore,
-    private router: Router) {
-
+    private equipoService: AuspiciadoresService,
+    private afs: AngularFirestore,
+    private router: Router,
+    ) {
   }
 
   teamForm = new FormGroup({
-    tituloNoticia: new FormControl('', Validators.required),
-    descripcionNoticia: new FormControl('', Validators.required),
-    autorNoticia: new FormControl('', Validators.required),
-    fechaNoticia: new FormControl('', Validators.required),
-    imgNoticia: new FormControl('', Validators.required),
-    mostrarNoticia: new FormControl('', Validators.required),
+    nombreAuspiciador: new FormControl('', Validators.required),
+    direccionAuspiciador: new FormControl('', Validators.required),
+    instagramAuspiciador: new FormControl('', Validators.required),
+    imgAuspiciador: new FormControl('', Validators.required),
+    facebookAuspiciador: new FormControl('', Validators.required)
   });
 
   onSubmit() {
-    this.auspiciadoresServices.setAuspiciadorData(this.teamForm.value, this.afs.createId()).then( () => {
-      alert('Noticia creada correctamente.');
+    this.equipoService.setAuspiciadorData(this.teamForm.value, this.afs.createId()).then( () => {
+      alert('Auspiciador creado correctamente.');
       this.teamForm.reset();
-      this.router.navigate(['admin-noticias-editar'])
+      this.router.navigate(['/admin-auspiciadores']);
     }).catch( () => {
-      alert('No ha sido posible redactar su noticia.');
+      alert('No ha sido posible crear el auspiciador.');
     });
-  };
+
+
+  }
+  
 
 
 }

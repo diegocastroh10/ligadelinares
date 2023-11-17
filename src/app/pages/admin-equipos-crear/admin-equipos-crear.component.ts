@@ -6,6 +6,7 @@ import {
 
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { AuthUsuarioService } from 'src/app/services/auth-usuario.service';
 
 @Component({
   selector: 'app-admin-equipos-crear',
@@ -16,7 +17,8 @@ export class AdminEquiposCrearComponent {
   constructor(
     private equipoService: EquiposService,
     private afs: AngularFirestore,
-    private router: Router) {
+    private router: Router,
+    public authService: AuthUsuarioService) {
   }
 
   teamForm = new FormGroup({
@@ -24,7 +26,7 @@ export class AdminEquiposCrearComponent {
     descripcionEquipo: new FormControl('', Validators.required),
     categoriaEquipo: new FormControl('', Validators.required),
     representanteEquipo: new FormControl('', Validators.required),
-    rutEquipo: new FormControl('', Validators.required),
+    rutEquipo: new FormControl('', Validators.required)
   });
 
   onSubmit() {

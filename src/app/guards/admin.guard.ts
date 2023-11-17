@@ -22,7 +22,7 @@ export class AdminGuard {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | UrlTree | boolean {
-    if (this.authService.isAdmindIn !== true) {
+    if (this.authService.isUser) {
       this.router.navigate(['signin-usuario']);
     } 
     return true;

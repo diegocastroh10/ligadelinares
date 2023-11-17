@@ -8,6 +8,7 @@
       <p class="card-text">{{ noticia.autorNoticia }}</p>
       <p class="card-text">{{ noticia.fechaNoticia | date: 'dd/MM/yyyy' }}</p>
       <a [routerLink]="['/admin-noticia-editar', noticia.id]" class="btn btn-primary mt-auto">Editar noticia</a>
+      <a *ngIf="authService.isAdmindIn && !noticia.authorized" (click)="autorizar(noticia.id)" class="btn btn-primary mt-auto">Autorizar noticia</a>
     </div>
   </div>
 </div>

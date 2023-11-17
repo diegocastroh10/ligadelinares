@@ -6,6 +6,7 @@ import {
 
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { AuthUsuarioService } from 'src/app/services/auth-usuario.service';
 
 @Component({
   selector: 'app-admin-noticias-crear',
@@ -16,7 +17,8 @@ export class AdminNoticiasCrearComponent {
   constructor(
     private noticiaService: NoticiasService,
     public afs: AngularFirestore,
-    private router: Router) {
+    private router: Router,
+    public authService: AuthUsuarioService) {
 
   }
 
@@ -26,10 +28,18 @@ export class AdminNoticiasCrearComponent {
     autorNoticia: new FormControl('', Validators.required),
     fechaNoticia: new FormControl('', Validators.required),
     imgNoticia: new FormControl('', Validators.required),
-    mostrarNoticia: new FormControl('', Validators.required),
+    mostrarNoticia: new FormControl(),
+    authorized: new FormControl(),
+    idAutor: new FormControl('')
   });
 
   onSubmit() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if(this.authService.isAuthor) {
+      this.teamForm.controls['authorized'].setValue(false);
+      this.teamForm.controls['mostrarNoticia'].setValue(false);
+    }
+    this.teamForm.controls['idAutor'].setValue(user.uid);
     this.noticiaService.setNoticiaData(this.teamForm.value, this.afs.createId()).then( () => {
       alert('Noticia creada correctamente.');
       this.teamForm.reset();
