@@ -24,6 +24,7 @@ export class AuthGuard {
   ): Observable<boolean> | Promise<boolean> | UrlTree | boolean {
     if (this.authService.isLoggedIn !== true) {
       this.router.navigate(['signin-usuario']);
+      alert('Para ver el componente por favor inicia sesión con tu cuenta.')
     } 
     return true;
   };

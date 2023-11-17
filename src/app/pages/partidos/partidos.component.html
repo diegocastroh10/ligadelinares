@@ -17,7 +17,7 @@
 
       <tbody *ngFor="let partido of partidos">
         <tr>
-          <th scope="row">{{partido.fechaPartido | date:'dd/MM/yyyy HH:mm'}}</th>
+          <th scope="row">{{partido.fechaPartido | date:'dd/MM/yyyy - HH:mm'}}</th>
           <td class="text-center">{{partido.equipoLocal}}</td>
           <td class="text-center">{{partido.resultadoPartido}}</td>
           <td class="text-center">{{partido.equipoVisita}}</td>

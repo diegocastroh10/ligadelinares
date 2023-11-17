@@ -1,0 +1,38 @@
+<div class="table-responsive-xl" >
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">POSICIÓN</th>
+          <th scope="col">EQUIPO</th>
+          <th scope="col">PUNTAJE</th>
+          <th scope="col">PJ</th>
+          <th scope="col">PG</th>
+          <th scope="col">PP</th>
+          <th scope="col">PTS FAVOR</th>
+          <th scope="col">PTS CONTRA</th>
+          <th scope="col">+/-</th>
+
+        </tr>
+      </thead>
+
+
+      <tbody *ngFor="let equipo of equipoTabla">
+        <tr>
+          <th scope="row">{{equipo.posicionEquipo}}</th>
+          <td>{{equipo.nombreEquipo}}</td>
+          <td>{{equipo.puntajeEquipo}}</td>
+          <td>{{equipo.partidosJugados}}</td>
+          <td>{{equipo.partidosGanados}}</td>
+          <td>{{equipo.partidosPerdidos}}</td>
+          <td>{{equipo.puntosFavor}}</td>
+          <td>{{equipo.puntosContra}}</td>
+          <td>{{equipo.masMenosTorneo}}</td>
+
+        </tr>
+      </tbody>
+
+
+
+    </table>
+  </div>

@@ -40,6 +40,7 @@ export class AdminNoticiaEditarComponent {
   onSubmit() {
     this.noticiaService.setNoticiaData(this.teamForm.value, this.id).then( () => {
       alert('Noticia actualizada correctamente.');
+      this.router.navigate(['/admin-noticias-editar'])
     }).catch( () => {
       alert('Ocurrió un error modificando tu noticia.');
     });

@@ -10,31 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './header/navbar/navbar.component';
 import { FootpageComponent } from './footer/footpage/footpage.component';
-import { InicioAdminComponent } from './pages/inicio-admin/inicio-admin.component';
 import { EquiposComponent } from './pages/equipos/equipos.component';
 import { NoticiasComponent } from './pages/noticias/noticias.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
-import { LoginAdminComponent } from './pages/login-admin/login-admin.component';
 import { SignupUsuarioComponent } from './pages/signup-usuario/signup-usuario.component';
-
-//FORMS
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-//FIREBASE
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { provideStorage,getStorage } from '@angular/fire/storage';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { environment } from '../environments/environment';
-
-//FONTAWESOME 6
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SigninUsuarioComponent } from './pages/signin-usuario/signin-usuario.component';
 import { VerifyUsuarioComponent } from './pages/verify-usuario/verify-usuario.component';
 import { RestaurarContrasenaComponent } from './pages/restaurar-contrasena/restaurar-contrasena.component';
@@ -56,17 +35,39 @@ import { AdminPartidosComponent } from './pages/admin-partidos/admin-partidos.co
 import { AdminPartidosCrearComponent } from './pages/admin-partidos-crear/admin-partidos-crear.component';
 import { AdminPartidosEditarComponent } from './pages/admin-partidos-editar/admin-partidos-editar.component';
 import { PartidosComponent } from './pages/partidos/partidos.component';
+import { TablaposicionesComponent } from './pages/tablaposiciones/tablaposiciones.component';
+import { UsuarioNoticiasComponent } from './pages/usuario-noticias/usuario-noticias.component';
+import { HomeComponent } from './pages/home/home.component';
+
+//FORMS
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+//FIREBASE
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../environments/environment';
+
+//FONTAWESOME 6
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AdminAuspiciadoresComponent } from './pages/admin-auspiciadores/admin-auspiciadores.component';
+import { AdminAuspiciadoresCrearComponent } from './pages/admin-auspiciadores-crear/admin-auspiciadores-crear.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FootpageComponent,
-    InicioAdminComponent,
     EquiposComponent,
     NoticiasComponent,
     UsuariosComponent,
-    LoginAdminComponent,
     SignupUsuarioComponent,
     SigninUsuarioComponent,
     VerifyUsuarioComponent,
@@ -89,6 +90,11 @@ import { PartidosComponent } from './pages/partidos/partidos.component';
     AdminPartidosCrearComponent,
     AdminPartidosEditarComponent,
     PartidosComponent,
+    TablaposicionesComponent,
+    UsuarioNoticiasComponent,
+    HomeComponent,
+    AdminAuspiciadoresComponent,
+    AdminAuspiciadoresCrearComponent,
   ],
   imports: [
     BrowserModule,

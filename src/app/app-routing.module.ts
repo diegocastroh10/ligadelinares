@@ -2,11 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 //COMPONENTS
-import { InicioAdminComponent } from './pages/inicio-admin/inicio-admin.component';
 import { EquiposComponent } from './pages/equipos/equipos.component';
 import { NoticiasComponent } from './pages/noticias/noticias.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
-import { LoginAdminComponent } from './pages/login-admin/login-admin.component';
 import { SignupUsuarioComponent } from './pages/signup-usuario/signup-usuario.component';
 import { SigninUsuarioComponent } from './pages/signin-usuario/signin-usuario.component';
 import { VerifyUsuarioComponent } from './pages/verify-usuario/verify-usuario.component';
@@ -33,9 +31,15 @@ import { AdminPartidosComponent } from './pages/admin-partidos/admin-partidos.co
 import { AdminPartidosCrearComponent } from './pages/admin-partidos-crear/admin-partidos-crear.component';
 import { AdminPartidosEditarComponent } from './pages/admin-partidos-editar/admin-partidos-editar.component';
 import { PartidosComponent } from './pages/partidos/partidos.component';
+import { TablaposicionesComponent } from './pages/tablaposiciones/tablaposiciones.component';
+import { UsuarioNoticiasComponent } from './pages/usuario-noticias/usuario-noticias.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AdminAuspiciadoresComponent } from './pages/admin-auspiciadores/admin-auspiciadores.component';
+import { AdminAuspiciadoresCrearComponent } from './pages/admin-auspiciadores-crear/admin-auspiciadores-crear.component';
 
 const routes: Routes = [
-  { path: '', component: InicioAdminComponent},
+  { path: '', component: HomeComponent},
+  { path: 'home', component: HomeComponent},
   { path: 'equipos', component: EquiposComponent/*, canActivate: [AuthGuard]*/},
   { path: 'noticias', component: NoticiasComponent},
   { path: 'usuarios', component: UsuariosComponent},
@@ -62,6 +66,10 @@ const routes: Routes = [
   { path: 'admin-partidos-crear', component: AdminPartidosCrearComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'admin-partidos-editar/:id', component: AdminPartidosEditarComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'partidos', component: PartidosComponent, canActivate: [AuthGuard]},
+  { path: 'tablaposiciones', component: TablaposicionesComponent, canActivate: [AuthGuard]},
+  { path: 'usuario-noticias/:id', component: UsuarioNoticiasComponent, canActivate: [AuthGuard]},
+  { path: 'admin-auspiciadores', component: AdminAuspiciadoresComponent, canActivate: [AuthGuard, AdminGuard]},
+  { path: 'admin-auspiciadores-crear', component: AdminAuspiciadoresCrearComponent, canActivate: [AuthGuard, AdminGuard]},
   //path que redirecciona a la dirección indicada si el link está mal escrito
   { path: '**', pathMatch: 'full', redirectTo: ''}
 ];

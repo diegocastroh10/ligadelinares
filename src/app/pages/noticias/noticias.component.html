@@ -1,1 +1,14 @@
-<p>noticias works!</p>
+<div class="row row-cols-1 row-cols-sm-2 g-3">
+    <div class="col" *ngFor="let noticia of noticias">
+      <div class="card" >
+        <img src="assets/img/logo_linarescolleges.png" class="card-img-top w-100" style="max-height: 300px;" alt="card-grid-image">
+        <div class="card-body">
+            <h5 class="card-title">{{ noticia.tituloNoticia }}</h5>
+            <p class="card-text text-truncate">{{ noticia.descripcionNoticia }}</p>
+            <p class="card-text">{{ noticia.autorNoticia }}</p>
+            <p class="card-text">{{ noticia.fechaNoticia | date: 'dd/MM/yyyy' }}</p>
+            <a [routerLink]="['/usuario-noticias', noticia.id]" class="btn btn-primary mt-auto">Ver noticia</a>
+        </div>
+      </div>
+    </div>
+</div>
