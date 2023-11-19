@@ -1,7 +1,7 @@
 <div class="displayTable">
     <div class="displayTableCell">
       <div class="authBlock">
-        <h3>Gracias por registrarte..</h3>
+        <h3>Gracias por registrarte, revisa tu correo y verifica tu usuario.</h3>
         <div class="formGroup" *ngIf="authService.userData as user">
           <p class="text-center">Hemos enviado un correo de verificación a tu email: <strong>{{user.email}}</strong>.</p>
           <p class="text-center">Por favor revisa tu correo y abre el link que te hemos enviado.</p>
@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="redirectToLogin">
-        <span>¿Ya tienes cuenta?<span class="redirect" routerLink="/sign-in">Ingresar con mi usuario.</span></span>
+        <span>¿Ya tienes cuenta?<span class="redirect" routerLink="/signin-usuario">Ingresar con mi usuario.</span></span>
       </div>
     </div>
   </div>

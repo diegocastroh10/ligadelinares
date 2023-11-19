@@ -45,7 +45,9 @@ const routes: Routes = [
   { path: 'equipos', component: EquiposComponent/*, canActivate: [AuthGuard]*/},
   { path: 'noticias', component: NoticiasComponent},
   { path: 'usuarios', component: UsuariosComponent},
-  //{ path: 'login-admin', component: LoginAdminComponent},
+  { path: 'partidos', component: PartidosComponent, canActivate: [AuthGuard]},
+  { path: 'tablaposiciones', component: TablaposicionesComponent, canActivate: [AuthGuard]},
+  { path: 'auspiciadores', component: AuspiciadoresComponent },
   { path: 'signup-usuario', component: SignupUsuarioComponent},
   { path: 'signin-usuario', component: SigninUsuarioComponent},
   { path: 'verify-usuario', component: VerifyUsuarioComponent},
@@ -64,16 +66,13 @@ const routes: Routes = [
   { path: 'admin-tablaposiciones-equipo', component: AdminTablaposicionesEquipoComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'admin-tablaposiciones-equipoeditar/:id', component: AdminTablaposicionesEquipoeditarComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'usuario-equipo/:id', component: UsuarioEquipoComponent, canActivate: [AuthGuard]},
+  { path: 'usuario-noticias/:id', component: UsuarioNoticiasComponent, canActivate: [AuthGuard]},
   { path: 'admin-partidos', component: AdminPartidosComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'admin-partidos-crear', component: AdminPartidosCrearComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'admin-partidos-editar/:id', component: AdminPartidosEditarComponent, canActivate: [AuthGuard, AdminGuard]},
-  { path: 'partidos', component: PartidosComponent, canActivate: [AuthGuard]},
-  { path: 'tablaposiciones', component: TablaposicionesComponent, canActivate: [AuthGuard]},
-  { path: 'usuario-noticias/:id', component: UsuarioNoticiasComponent, canActivate: [AuthGuard]},
   { path: 'admin-auspiciadores', component: AdminAuspiciadoresComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'admin-auspiciadores-crear', component: AdminAuspiciadoresCrearComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'admin-auspiciadores-editar/:id', component: AdminAuspiciadoresEditarComponent, canActivate: [AuthGuard, AdminGuard]},
-  { path: 'auspiciadores', component: AuspiciadoresComponent },
   //path que redirecciona a la dirección indicada si el link está mal escrito
   { path: '**', pathMatch: 'full', redirectTo: ''}
 ];
