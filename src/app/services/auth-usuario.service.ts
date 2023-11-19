@@ -62,17 +62,17 @@ export class AuthUsuarioService {
   };
 
   //CREAR USUARIO
-  async signUp(correoUsuario:string, contrasenaUsuario:string) {
+  async signUp(correoUsuario: string, contrasenaUsuario: string) {
     return this.afAuth
       .createUserWithEmailAndPassword(correoUsuario, contrasenaUsuario)
-      .then( (result) => {
+      .then((result) => {
         this.sendVerificationMail();
-        this.setUserData(result.user);
+        this.setUserData(result.user); 
       })
-      .catch ( () => {
-        window.alert('error.message');
+      .catch(() => {
+        window.alert('Error al crear la cuenta');
       });
-  };
+  }
 
   //ENVIAR CORREO DE VERIFICACIÓN AL REGISTRARSE
   sendVerificationMail() {
@@ -124,11 +124,11 @@ export class AuthUsuarioService {
     const userData: AuthUsuarios = { 
       uid: user.uid,
       email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
+      displayName: user.displayName || '',
+      photoURL: user.photoURL || '',
       emailVerified: user.emailVerified,
       tipoUsuario: '0',
-      nombreUsuario: user.nombreUsuario,
+      nombreUsuario: user.nombreUsuario || '',
     };
     console.log(user);
     
