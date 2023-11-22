@@ -38,6 +38,7 @@ import { AdminAuspiciadoresComponent } from './pages/admin-auspiciadores/admin-a
 import { AdminAuspiciadoresCrearComponent } from './pages/admin-auspiciadores-crear/admin-auspiciadores-crear.component';
 import { AdminAuspiciadoresEditarComponent } from './pages/admin-auspiciadores-editar/admin-auspiciadores-editar.component';
 import { AuspiciadoresComponent } from './pages/auspiciadores/auspiciadores.component';
+import { UsuarioAuspiciadorComponent } from './pages/usuario-auspiciador/usuario-auspiciador.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -67,6 +68,7 @@ const routes: Routes = [
   { path: 'admin-tablaposiciones-equipoeditar/:id', component: AdminTablaposicionesEquipoeditarComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'usuario-equipo/:id', component: UsuarioEquipoComponent, canActivate: [AuthGuard]},
   { path: 'usuario-noticias/:id', component: UsuarioNoticiasComponent, canActivate: [AuthGuard]},
+  { path: 'usuario-auspiciador/:id', component: UsuarioAuspiciadorComponent },
   { path: 'admin-partidos', component: AdminPartidosComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'admin-partidos-crear', component: AdminPartidosCrearComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'admin-partidos-editar/:id', component: AdminPartidosEditarComponent, canActivate: [AuthGuard, AdminGuard]},

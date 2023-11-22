@@ -60,6 +60,7 @@ import { AdminAuspiciadoresComponent } from './pages/admin-auspiciadores/admin-a
 import { AdminAuspiciadoresCrearComponent } from './pages/admin-auspiciadores-crear/admin-auspiciadores-crear.component';
 import { AdminAuspiciadoresEditarComponent } from './pages/admin-auspiciadores-editar/admin-auspiciadores-editar.component';
 import { AuspiciadoresComponent } from './pages/auspiciadores/auspiciadores.component';
+import { UsuarioAuspiciadorComponent } from './pages/usuario-auspiciador/usuario-auspiciador.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +99,7 @@ import { AuspiciadoresComponent } from './pages/auspiciadores/auspiciadores.comp
     AdminAuspiciadoresCrearComponent,
     AdminAuspiciadoresEditarComponent,
     AuspiciadoresComponent,
+    UsuarioAuspiciadorComponent,
   ],
   imports: [
     BrowserModule,
