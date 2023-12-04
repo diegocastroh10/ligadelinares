@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuspiciadoresService } from 'src/app/services/auspiciadores.service';
-import {
-  AngularFirestore,
-
-} from '@angular/fire/compat/firestore';
-import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-admin-auspiciadores-editar',
@@ -16,6 +13,7 @@ export class AdminAuspiciadoresEditarComponent {
   id: string;
   teamForm:FormGroup;
   isLoading: boolean = true;
+
   constructor(
     private auspiciadoresServices: AuspiciadoresService, 
     private route: ActivatedRoute, 

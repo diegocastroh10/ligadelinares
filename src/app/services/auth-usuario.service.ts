@@ -4,12 +4,9 @@ import {
   AngularFirestore,
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
-import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { getDoc, doc } from 'firebase/firestore';
-import { docData } from '@angular/fire/firestore';
+
 
 
 @Injectable({
@@ -24,20 +21,6 @@ export class AuthUsuarioService {
     public router: Router,
     public ngZone: NgZone
   ) {
-    /* Guardar los datos del usuario en el LocalStorge cuando 
-    Inicia sesión y dejarlo como null cuando se cierra la sesión 
-    this.afAuth.authState.subscribe( (user) => {
-      if (user) {
-        this.userData = user;
-        localStorage.setItem('user', JSON.stringify(this.userData));
-        console.log(this.userData);
-        JSON.parse(localStorage.getItem('user')!);
-      } else {
-        localStorage.setItem('user', 'null');
-        JSON.parse(localStorage.getItem('user')!);
-      };
-    });
-    */
 
   };
 
@@ -142,9 +125,6 @@ export class AuthUsuarioService {
   };
 
   async getUserData(user: any) {
-    /*const userRef: AngularFirestoreDocument<any> = this.afs.doc(
-      `usuarios/${user.uid}`
-    );*/
     const userRef = this.afs.doc(`usuarios/${user.uid}`).valueChanges().subscribe((result:any) => {
       console.log(result);
 
@@ -161,18 +141,17 @@ export class AuthUsuarioService {
       localStorage.setItem('user', JSON.stringify(userData));
       return userData;
 
-    });
-
-    
+    }); 
     console.log(user);
   };
 
   //CERRAR SESIÓN Y BORRAR TOKEN
   signOut() {
-    return this.afAuth.signOut().then( () => {
-      console.log('Se ha cerrado su sesión.')
-      localStorage.removeItem('user');
-      localStorage.setItem('user', 'null');
+    localStorage.removeItem('user');
+    localStorage.setItem('user', 'null');
+
+    return this.afAuth.signOut().then(() => {
+      console.log('Se ha cerrado su sesión.');
       this.router.navigate(['signin-usuario']);
     });
   };

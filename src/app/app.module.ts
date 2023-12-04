@@ -11,7 +11,6 @@ import { NavbarComponent } from './header/navbar/navbar.component';
 import { FootpageComponent } from './footer/footpage/footpage.component';
 import { EquiposComponent } from './pages/equipos/equipos.component';
 import { NoticiasComponent } from './pages/noticias/noticias.component';
-import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { SignupUsuarioComponent } from './pages/signup-usuario/signup-usuario.component';
 import { SigninUsuarioComponent } from './pages/signin-usuario/signin-usuario.component';
 import { VerifyUsuarioComponent } from './pages/verify-usuario/verify-usuario.component';
@@ -37,6 +36,11 @@ import { PartidosComponent } from './pages/partidos/partidos.component';
 import { TablaposicionesComponent } from './pages/tablaposiciones/tablaposiciones.component';
 import { UsuarioNoticiasComponent } from './pages/usuario-noticias/usuario-noticias.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AdminAuspiciadoresComponent } from './pages/admin-auspiciadores/admin-auspiciadores.component';
+import { AdminAuspiciadoresCrearComponent } from './pages/admin-auspiciadores-crear/admin-auspiciadores-crear.component';
+import { AdminAuspiciadoresEditarComponent } from './pages/admin-auspiciadores-editar/admin-auspiciadores-editar.component';
+import { AuspiciadoresComponent } from './pages/auspiciadores/auspiciadores.component';
+import { UsuarioAuspiciadorComponent } from './pages/usuario-auspiciador/usuario-auspiciador.component';
 
 //FORMS
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -56,11 +60,6 @@ import { environment } from '../environments/environment';
 
 //FONTAWESOME 6
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AdminAuspiciadoresComponent } from './pages/admin-auspiciadores/admin-auspiciadores.component';
-import { AdminAuspiciadoresCrearComponent } from './pages/admin-auspiciadores-crear/admin-auspiciadores-crear.component';
-import { AdminAuspiciadoresEditarComponent } from './pages/admin-auspiciadores-editar/admin-auspiciadores-editar.component';
-import { AuspiciadoresComponent } from './pages/auspiciadores/auspiciadores.component';
-import { UsuarioAuspiciadorComponent } from './pages/usuario-auspiciador/usuario-auspiciador.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +68,6 @@ import { UsuarioAuspiciadorComponent } from './pages/usuario-auspiciador/usuario
     FootpageComponent,
     EquiposComponent,
     NoticiasComponent,
-    UsuariosComponent,
     SignupUsuarioComponent,
     SigninUsuarioComponent,
     VerifyUsuarioComponent,

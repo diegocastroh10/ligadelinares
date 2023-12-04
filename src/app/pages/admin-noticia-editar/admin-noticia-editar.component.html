@@ -11,8 +11,7 @@
                     <div class="row mb-3">
                       <label for="tituloNoticia" class="col-sm-2 col-form-label">Titulo</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control form-control-lg"
-                            placeholder="Ingresa tu título" formControlName="tituloNoticia"/>
+                            <input type="text" class="form-control form-control-lg" formControlName="tituloNoticia"/>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -41,11 +40,11 @@
                       </div>
                     </div>
                     <div class="row mb-3">
-                      <label for="tituloNoticia" class="col-sm-2 col-form-label">Imagen</label>
-                        <div class="col-sm-10">
-                          <input class="form-control" type="file" id="formFile" formControlName="imgNoticia">
-                        </div>
-                    </div>
+                      <label class="form-label col-sm-2 col-form-label">Imagen</label>
+                      <div class="col-sm-10">
+                          <input type="file" name="" class="form-control form-control-lg" placeholder="Logo empresa" (change)="onFileSelected($event)" />
+                      </div>
+                  </div> 
                     <div class="row mb-3 form-check form-switch">
                         <div class="col-sm-10">
                             <label class="form-check-label" for="formSwitchCheckChecked">Mostrar noticia</label>

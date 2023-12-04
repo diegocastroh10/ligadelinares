@@ -4,7 +4,7 @@
 <br>
 <div class="card-group">
   <div class="card border" *ngFor="let auspiciador of auspiciadores">
-    <img class="card-img-top w-100" style="max-height: 250px;" src="assets/img/logo_linarescolleges.png" alt="Card image cap">
+    <img class="card-img-top w-100" style="max-height: 250px;" [src]="auspiciador.imgAuspiciador" alt="Card image cap">
     <div class="card-body d-flex flex-column">
       <h5 class="card-title">{{ auspiciador.nombreAuspiciador }}</h5>
       <p class="card-text">Dirección: {{ auspiciador.direccionAuspiciador }}</p>

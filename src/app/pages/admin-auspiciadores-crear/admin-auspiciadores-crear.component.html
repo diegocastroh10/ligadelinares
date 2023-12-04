@@ -34,8 +34,8 @@
 
                             <div class="form-outline mb-3">
                                 <label class="form-label">Imagen</label>
-                                <input type="file" name="" class="form-control form-control-lg" placeholder="Representante" formControlName="imgAuspiciador"/>
-                            </div>
+                                <input type="file" name="" class="form-control form-control-lg" placeholder="Logo empresa" (change)="onFileSelected($event)" />
+                            </div>                            
 
                             <div class="text-center text-lg-start mt-4 pt-2">
                                 <button type="submit" [disabled]="!teamForm.valid" class="btn btn-primary btn-lg">Crear</button>

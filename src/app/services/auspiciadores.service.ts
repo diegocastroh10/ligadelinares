@@ -26,10 +26,6 @@ export class AuspiciadoresService {
     );
     return auspiciadorRef.set(auspiciador, {
       merge: true,
-    });
-    /*
-    El parámetro { merge: true } se utiliza para fusionar los datos con un documento existente si ya existe uno con la misma ruta, de lo contrario, se crea un nuevo documento. Esto permite actualizar los campos existentes y agregar nuevos campos según sea necesario.
-    */
-    
+    });    
   };
 }

@@ -36,7 +36,7 @@ export class AdminPartidosCrearComponent {
     this.partidoServices.setPartidoData(this.teamForm.value, this.afs.createId()).then( () => {
       alert('Partido creado correctamente.');
       this.teamForm.reset();
-      this.router.navigate(['admin-partidos-editar'])
+      this.router.navigate(['admin-partidos'])
     }).catch( () => {
       alert('No ha sido posible redactar su noticia.');
     });

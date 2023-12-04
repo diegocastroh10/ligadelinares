@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 //COMPONENTS
 import { EquiposComponent } from './pages/equipos/equipos.component';
 import { NoticiasComponent } from './pages/noticias/noticias.component';
-import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { SignupUsuarioComponent } from './pages/signup-usuario/signup-usuario.component';
 import { SigninUsuarioComponent } from './pages/signin-usuario/signin-usuario.component';
 import { VerifyUsuarioComponent } from './pages/verify-usuario/verify-usuario.component';
@@ -45,7 +44,6 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'equipos', component: EquiposComponent/*, canActivate: [AuthGuard]*/},
   { path: 'noticias', component: NoticiasComponent},
-  { path: 'usuarios', component: UsuariosComponent},
   { path: 'partidos', component: PartidosComponent, canActivate: [AuthGuard]},
   { path: 'tablaposiciones', component: TablaposicionesComponent, canActivate: [AuthGuard]},
   { path: 'auspiciadores', component: AuspiciadoresComponent },
