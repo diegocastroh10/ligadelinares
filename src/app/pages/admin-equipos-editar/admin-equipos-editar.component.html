@@ -1,6 +1,6 @@
 <div class="card-group">
     <div class="card border" *ngFor="let equipo of equipos">
-      <img class="card-img-top" src="assets/img/logo_linarescolleges.png" alt="Card image cap">
+      <img class="card-img-top" [src]="equipo.imgEquipo" alt="Card image cap">
       <div class="card-body d-flex flex-column">
         <h5 class="card-title">{{ equipo.nombreEquipo }}</h5>
         <p class="card-text">{{ equipo.descripcionEquipo }}</p>

@@ -1,1 +1,15 @@
-<p>usuario-auspiciador works!</p>
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 g-3">
+      <div class="col mx-auto" *ngIf="auspiciadores">
+        <div class="card" >
+          <img [src]="auspiciadores.imgAuspiciador" class="card-img-top w-100" style="max-height: 300px;" alt="card-grid-image">
+          <div class="card-body">
+            <h5 class="card-title">{{ auspiciadores.nombreAuspiciador }}</h5>
+            <p class="card-text">{{ auspiciadores.direccionAuspiciador }}</p>
+            <p class="card-text">{{ auspiciadores.facebookAuspiciador }}</p>
+            <p class="card-text">{{ auspiciadores.instagramAuspiciador }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,17 +1,16 @@
-<div class="d-flex flex-wrap align-items-center">
-  <div class="card" *ngIf="noticias">
-    <div class="row g-0 align-items-center">
-      <div class="col-5 col-sm-4">
-        <img src="assets/img/logo_colbunmachikura.png" class="card-img-top w-100" style="max-height: 250px;" alt="card-horizontal-image">
-      </div>
-      <div class="col-7 col-sm-8">
+<div class="container">
+  <div class="row row-cols-1 row-cols-sm-2 g-3">
+    <div class="col mx-auto" *ngIf="noticias">
+      <div class="card" >
+        <img [src]="noticias.imgNoticia" class="card-img-top w-100" style="max-height: 300px;" alt="card-grid-image">
         <div class="card-body">
           <h5 class="card-title">{{ noticias.tituloNoticia }}</h5>
           <p class="card-text">{{ noticias.descripcionNoticia }}</p>
           <p class="card-text">{{ noticias.autorNoticia }}</p>
-          <p class="card-text">{{ noticias.fechaNoticia | date:'dd/MM/yyyy' }}</p>
+          <p class="card-text">{{ noticias.fechaNoticia | date: 'dd/MM/yyyy' }}</p>
         </div>
       </div>
     </div>
   </div>
 </div>
+

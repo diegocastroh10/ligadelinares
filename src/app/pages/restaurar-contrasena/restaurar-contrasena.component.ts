@@ -6,13 +6,11 @@ import { AuthUsuarioService } from 'src/app/services/auth-usuario.service';
   templateUrl: './restaurar-contrasena.component.html',
   styleUrls: ['./restaurar-contrasena.component.scss']
 })
-export class RestaurarContrasenaComponent implements OnInit {
+export class RestaurarContrasenaComponent {
   constructor(
     public authService: AuthUsuarioService,
   ) {
     
   }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+
 }

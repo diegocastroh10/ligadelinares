@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 
@@ -7,22 +7,19 @@ import { Router } from '@angular/router';
   templateUrl: './noticias.component.html',
   styleUrls: ['./noticias.component.scss']
 })
-export class NoticiasComponent {
+export class NoticiasComponent implements OnInit {
   noticias: any[] = [];
 
   constructor(
     private afs: AngularFirestore, 
     private router: Router) {
-    // this.afs.collection('noticias').valueChanges().subscribe( (noticia: any[]) => {
-    //   console.log('equipo ', equipo);
-    //   this.equipos = equipo;
-    // });
   }
 
   ngOnInit(){
+    console.log('NoticiasComponent ngOnInit called');
     this.afs.collection("noticias", busqueda => {
      return busqueda.where('mostrarNoticia', '==', true)
-     //.where('authorized', '==', true )
+     .where('authorized', '==', true )
     })
     .get()
     .subscribe((querySnapshot:any) => {

@@ -31,13 +31,13 @@ export class AdminNoticiaEditarComponent {
     this.afs.collection(`noticias`).doc(this.id).valueChanges().subscribe((noticia:any) => {
       this.teamForm = new FormGroup({
         tituloNoticia: new FormControl(noticia.tituloNoticia, Validators.required),
-        autorNoticia: new FormControl(noticia.autorNoticia, Validators.required),
         descripcionNoticia: new FormControl(noticia.descripcionNoticia, Validators.required),
+        autorNoticia: new FormControl(noticia.autorNoticia, Validators.required),
         fechaNoticia: new FormControl(noticia.fechaNoticia, Validators.required),
-        mostrarNoticia: new FormControl({ value: noticia.mostrarNoticia, disabled: this.authService.isAuthor }),
-        imgNoticia: new FormControl(null, Validators.required),
-        authorized: new FormControl(),
-        idAutor: new FormControl(),
+        imgNoticia: new FormControl(noticia.imgNoticia),
+        mostrarNoticia: new FormControl({value: noticia.mostrarNoticia, disabled: this.authService.isAuthor }),
+        authorized: new FormControl(false),
+        idAutor: new FormControl(noticia.idAutor),
       });
       this.isLoading = false;
     });
@@ -45,13 +45,6 @@ export class AdminNoticiaEditarComponent {
   
 
   onSubmit() {
-    const user = JSON.parse(localStorage.getItem('user'));
-    if(this.authService.isAuthor) {
-      this.teamForm.controls['authorized'].setValue(false);
-      this.teamForm.controls['mostrarNoticia'].setValue(false);
-    };
-    this.teamForm.controls['idAutor'].setValue(user.uid);
-
     const imgFile: File | null = this.teamForm.get('imgNoticia')?.value;
 
     if (imgFile instanceof File) {
@@ -73,13 +66,12 @@ export class AdminNoticiaEditarComponent {
           // Configurar la URL de la iamgen cargada
           this.teamForm.patchValue({ imgNoticia : downloadURL });
   
-          // Crear noticia
-          this.noticiaService.setNoticiaData(this.teamForm.value, this.afs.createId()).then( () => {
-            alert('Noticia editada correctamente.');
-            this.teamForm.reset();  
-            this.router.navigate(['admin-noticias-editar'])
+          // Editar noticia
+          this.noticiaService.setNoticiaData(this.teamForm.value, this.id).then( () => {
+            alert('Noticia actualizada correctamente');
+            this.router.navigate(['/noticias']);
           }).catch( () => {
-            alert('No ha sido posible redactar su noticia.');
+            alert('Ocurrió un error actualizando la noticia.');
           });
         });
       });

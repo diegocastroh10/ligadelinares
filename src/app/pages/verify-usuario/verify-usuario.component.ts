@@ -6,10 +6,9 @@ import { AuthUsuarioService } from 'src/app/services/auth-usuario.service';
   templateUrl: './verify-usuario.component.html',
   styleUrls: ['./verify-usuario.component.scss']
 })
-export class VerifyUsuarioComponent implements OnInit {
+export class VerifyUsuarioComponent{
   constructor(
     public authService: AuthUsuarioService,
   ) { }
-  ngOnInit() {
-  }
+
 }

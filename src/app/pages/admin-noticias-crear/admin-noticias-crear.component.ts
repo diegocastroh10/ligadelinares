@@ -30,7 +30,7 @@ export class AdminNoticiasCrearComponent {
     autorNoticia: new FormControl('', Validators.required),
     fechaNoticia: new FormControl('', Validators.required),
     imgNoticia: new FormControl(null, Validators.required),
-    mostrarNoticia: new FormControl(),
+    mostrarNoticia: new FormControl({value: false, disabled: this.authService.isAuthor }),
     authorized: new FormControl(),
     idAutor: new FormControl(''),
   });
